@@ -1,5 +1,6 @@
 import {NavLink} from "react-router";
 import {PATH} from "@/common/constants/constants.ts";
+import s from './NavBar.module.css'
 
 const links = [
     {path: PATH.MAIN_PAGE, label: 'Main'},
@@ -12,10 +13,10 @@ const links = [
 export function NavBar() {
     return (
         <nav>
-            <ul>
+            <ul className={s.list}>
                 {links.map((link, index) => (
-                    <li key={index}>
-                        <NavLink to={link.path}>{link.label}</NavLink>
+                    <li key={index} className={s.listItem}>
+                        <NavLink to={link.path} className={s.link}>{link.label}</NavLink>
                     </li>
                 ))}
             </ul>
