@@ -11,7 +11,12 @@ export function Routing() {
     return (
         <Routes>
             <Route path={PATH.MAIN_PAGE} element={<Main/>}/>
-            <Route path={PATH.CATEGORY_MOVIES_PAGE} element={<CategoryMoviesPage/>}/>
+            <Route path={PATH.CATEGORY_MOVIES_PAGE} element={<CategoryMoviesPage/>}>
+                <Route path={PATH.FILTERED_MOVIES_PAGE} element={<FilteredMoviesPage/>}/>
+                <Route path={PATH.FILTERED_MOVIES_PAGE} element={<FilteredMoviesPage/>}/>
+                <Route path={PATH.FILTERED_MOVIES_PAGE} element={<FilteredMoviesPage/>}/>
+                <Route path={PATH.FILTERED_MOVIES_PAGE} element={<FilteredMoviesPage/>}/>
+            </Route>
             <Route path={PATH.FILTERED_MOVIES_PAGE} element={<FilteredMoviesPage/>}/>
             <Route path={PATH.SEARCH_PAGE} element={<SearchPage/>}/>
             <Route path={PATH.FAVORITES_MOVIES_PAGE} element={<FavoritesPage/>}/>

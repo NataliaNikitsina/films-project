@@ -8,4 +8,5 @@ header {
     right: 0;
     padding: 10px 20px;
     z-index: 1000;
+    background: linear-gradient(to right, rgba(1, 180, 228, 0.2), rgba(144, 206, 161, 0.2));
 }

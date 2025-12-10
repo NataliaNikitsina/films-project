@@ -1,16 +1,42 @@
 import {baseApi} from "@/app/baseApi.ts"
-import type {FavoriteMoviesResponse} from "@/common/types/types.ts";
+import type {MoviesResponse, MoviesResponseWithDatePeriod} from "@/common/types/types.ts";
 
 export const moviesApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
-        getPopularMovie: builder.query<FavoriteMoviesResponse, {page: number}>({
+        getPopularMovie: builder.query<MoviesResponse, { page: number }>({
             query: (page) => ({
-                url:"/movie/popular",
+                url: "/movie/popular",
+                params: page,
+            }),
+        }),
+
+        getTopRatedMovie: builder.query<MoviesResponse, { page: number }>({
+            query: (page) => ({
+                url: "/movie/top_rated",
+                params: page,
+            }),
+        }),
+
+        getUpcomingMovie: builder.query<MoviesResponseWithDatePeriod, { page: number }>({
+            query: (page) => ({
+                url: "/movie/upcoming",
+                params: page,
+            }),
+        }),
+
+        getNowPlayingMovie: builder.query<MoviesResponseWithDatePeriod, { page: number }>({
+            query: (page) => ({
+                url: "/movie/now_playing",
                 params: page,
             }),
         }),
     })
 })
 
-export const {useGetPopularMovieQuery} = moviesApi
+export const {
+    useGetPopularMovieQuery,
+    useGetTopRatedMovieQuery,
+    useGetUpcomingMovieQuery,
+    useGetNowPlayingMovieQuery
+} = moviesApi
 

@@ -7,8 +7,9 @@ import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
 
 export function App() {
     const themeMode = useAppSelector(selectThemeMode)
+    const className = `${s.container} ${themeMode === 'dark' ? s.dark : ''}`
   return (
-    <div className={themeMode === 'dark' ? s.dark : ''}>
+    <div className={className}>
         <Header />
         <Routing/>
         <Footer/>

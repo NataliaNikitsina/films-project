@@ -1,4 +1,4 @@
-export type FavoriteMoviesResponse = {
+export type MoviesResponse = {
     page: number
     results: Movie[]
     total_pages: number
@@ -20,4 +20,14 @@ export type Movie = { adult: boolean,
     vote_average: number
     vote_count: number
 }
+
+export type DatePeriod = {
+    dates: {
+        maximum: string,
+        minimum: string
+    }
+}
+
+export type MoviesResponseWithDatePeriod = DatePeriod & MoviesResponse
+
 
