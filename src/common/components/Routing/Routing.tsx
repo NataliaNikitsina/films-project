@@ -5,6 +5,10 @@ import {CategoryMoviesPage} from "@/features/pages/CategoryMoviesPage/CategoryMo
 import {FilteredMoviesPage} from "@/features/pages/FilteredMoviesPage/FilteredMoviesPage.tsx";
 import {SearchPage} from "@/features/pages/SearchPage/SearchPage.tsx";
 import {FavoritesPage} from "@/features/pages/FavoritesPage/FavoritesPage.tsx";
+import {PopularMovies} from "@/features/pages/CategoryMoviesPage/PopularMovies/PopularMovies.tsx";
+import {TopRatedMovies} from "@/features/pages/CategoryMoviesPage/TopRatedMovies/TopRatedMovies.tsx";
+import {UpcomingMovies} from "@/features/pages/CategoryMoviesPage/UpcomingMovies/UpcomingMovies.tsx";
+import {NowPlayingMovies} from "@/features/pages/CategoryMoviesPage/NowPlayingMovies/NowPlayingMovies.tsx";
 
 
 export function Routing() {
@@ -12,10 +16,10 @@ export function Routing() {
         <Routes>
             <Route path={PATH.MAIN_PAGE} element={<Main/>}/>
             <Route path={PATH.CATEGORY_MOVIES_PAGE} element={<CategoryMoviesPage/>}>
-                <Route path={PATH.FILTERED_MOVIES_PAGE} element={<FilteredMoviesPage/>}/>
-                <Route path={PATH.FILTERED_MOVIES_PAGE} element={<FilteredMoviesPage/>}/>
-                <Route path={PATH.FILTERED_MOVIES_PAGE} element={<FilteredMoviesPage/>}/>
-                <Route path={PATH.FILTERED_MOVIES_PAGE} element={<FilteredMoviesPage/>}/>
+                <Route path={PATH.POPULAR_MOVIES} element={<PopularMovies/>}/>
+                <Route path={PATH.TOP_RATED_MOVIES} element={<TopRatedMovies/>}/>
+                <Route path={PATH.UPCOMING_MOVIES} element={<UpcomingMovies/>}/>
+                <Route path={PATH.NOW_PLAYING_MOVIES} element={<NowPlayingMovies/>}/>
             </Route>
             <Route path={PATH.FILTERED_MOVIES_PAGE} element={<FilteredMoviesPage/>}/>
             <Route path={PATH.SEARCH_PAGE} element={<SearchPage/>}/>

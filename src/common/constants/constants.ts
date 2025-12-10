@@ -6,7 +6,7 @@ export const PATH = {
     SEARCH_PAGE: '/search ',
     POPULAR_MOVIES: '/popular ',
     TOP_RATED_MOVIES: '/top-rated ',
-    UPCOMING_TOP_RATED_MOVIES: '/upcoming ',
+    UPCOMING_MOVIES: '/upcoming ',
     NOW_PLAYING_MOVIES: '/now-playing ',
 }
 
@@ -20,4 +20,16 @@ export const POSTER_SIZES = {
     BIG: "w500",
     // "w780",
     ORIGINAL: "original"
+}
+
+export const SECTION_LABELS = {
+    MAIN_PAGE: 'Main',
+    CATEGORY_MOVIES_PAGE: 'Category movies',
+    FILTERED_MOVIES_PAGE: 'Filtered movies',
+    FAVORITES_MOVIES_PAGE: 'Favorites',
+    SEARCH_PAGE: 'Search',
+    POPULAR_MOVIES: 'Popular Movies',
+    TOP_RATED_MOVIES: 'Top Rated Movies',
+    UPCOMING_MOVIES: 'Upcoming Movies',
+    NOW_PLAYING_MOVIES: 'Now Playing Movies',
 }

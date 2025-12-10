@@ -1,16 +1,11 @@
 import {NavLink} from "react-router";
-import {PATH} from "@/common/constants/constants.ts";
 import s from './NavBar.module.css'
 
-const links = [
-    {path: PATH.MAIN_PAGE, label: 'Main'},
-    {path: PATH.CATEGORY_MOVIES_PAGE, label: 'Category movies'},
-    {path: PATH.FILTERED_MOVIES_PAGE, label: 'Filtered movies'},
-    {path: PATH.SEARCH_PAGE, label: 'Search'},
-    {path: PATH.FAVORITES_MOVIES_PAGE, label: 'Favorites'},
-]
+type Props = {
+    links: {path: string, label: string}[]
+}
 
-export function NavBar() {
+export function NavBar({links}: Props) {
     return (
         <nav>
             <ul className={s.list}>
