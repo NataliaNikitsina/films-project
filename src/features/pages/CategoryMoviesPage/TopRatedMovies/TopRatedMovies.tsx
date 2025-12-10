@@ -1,14 +1,22 @@
-export const TopRatedMovies = () => {
+import {SECTION_LABELS} from "@/common/constants/constants.ts";
+import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
+import {useState} from "react";
+import {useGetTopRatedMovieQuery} from "@/features/moviesApi.ts";
+import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
 
+export const TopRatedMovies = () => {
+    const [currentPage, setCurrentPage] = useState(1)
+    const {data} = useGetTopRatedMovieQuery({page: 1})
 
     return (
         <div>
-            <h3>Top Rated</h3>
-            {/*<div className={s.container}>*/}
-            {/*    {topRatedMovies?.map((movie) => (*/}
-            {/*        <MovieCard key={movie.id} imgSrc={movie.poster_path} title={movie.title} />*/}
-            {/*    ))}*/}
-            {/*</div>*/}
+            <h3>{SECTION_LABELS.TOP_RATED_MOVIES}</h3>
+            {data && <MoviesList movies={data.results}/>}
+            {data && <Pagination
+                currentPage={currentPage}
+                setCurrentPage={setCurrentPage}
+                pagesCount={data.total_pages || 1}
+            />}
         </div>
     )
 }

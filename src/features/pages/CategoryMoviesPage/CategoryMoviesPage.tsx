@@ -11,11 +11,12 @@ const links = [
 ]
 
 export function CategoryMoviesPage() {
-
     return (
         <section>
             <NavBar links={links} />
-            <Outlet/>
+            <div>
+                <Outlet />
+            </div>
         </section>
     )
 }

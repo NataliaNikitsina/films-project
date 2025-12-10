@@ -1,7 +1,7 @@
-import {MovieCard} from "@/common/components/MovieCard/MovieCard.tsx";
-import s from './CategoryPreview.module.css'
 import type {Movie} from "@/common/types/types.ts";
 import {NavLink} from "react-router";
+import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
+import {PATH} from "@/common/constants/constants.ts";
 
 type Props = {
     title: string
@@ -14,12 +14,8 @@ export const CategoryPreview = ({title, data, linkPath}: Props) => {
     return (
         <div>
             <h3>{title}</h3>
-            <NavLink to={linkPath}>View more</NavLink>
-            <div className={s.container}>
-                {data.map((movie) => (
-                    <MovieCard key={movie.id} imgSrc={movie.poster_path} title={movie.title} />
-                ))}
-            </div>
+            <NavLink to={`${PATH.CATEGORY_MOVIES_PAGE}/${linkPath}`}>View more</NavLink>
+            <MoviesList movies={data} />
         </div>
     )
 }

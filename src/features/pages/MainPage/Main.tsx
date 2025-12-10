@@ -17,8 +17,9 @@ export function Main() {
     return (
         <section>
             {/*//<img src={randomCover} alt={'cover'} width='100%' height={'500px'}/>*/}
-            {links.map((el => (
+            {links.map(((el, index) => (
                 <CategoryPreview
+                    key={index}
                     title={el.label}
                     data={allCategoryMoviesSliced[el.label] ?? []}
                     linkPath={el.path}

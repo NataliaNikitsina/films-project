@@ -1,14 +1,15 @@
 import {Route, Routes} from "react-router";
 import {PATH} from "@/common/constants/constants.ts";
 import {Main} from "@/features/pages/MainPage/Main.tsx";
-import {CategoryMoviesPage} from "@/features/pages/CategoryMoviesPage/CategoryMoviesPage.tsx";
 import {FilteredMoviesPage} from "@/features/pages/FilteredMoviesPage/FilteredMoviesPage.tsx";
 import {SearchPage} from "@/features/pages/SearchPage/SearchPage.tsx";
 import {FavoritesPage} from "@/features/pages/FavoritesPage/FavoritesPage.tsx";
+import {CategoryMoviesPage} from "@/features/pages/CategoryMoviesPage/CategoryMoviesPage.tsx";
 import {PopularMovies} from "@/features/pages/CategoryMoviesPage/PopularMovies/PopularMovies.tsx";
 import {TopRatedMovies} from "@/features/pages/CategoryMoviesPage/TopRatedMovies/TopRatedMovies.tsx";
 import {UpcomingMovies} from "@/features/pages/CategoryMoviesPage/UpcomingMovies/UpcomingMovies.tsx";
 import {NowPlayingMovies} from "@/features/pages/CategoryMoviesPage/NowPlayingMovies/NowPlayingMovies.tsx";
+
 
 
 export function Routing() {
@@ -27,4 +28,3 @@ export function Routing() {
         </Routes>
     )
 }
-
