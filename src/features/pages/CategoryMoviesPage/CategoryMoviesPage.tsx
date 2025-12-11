@@ -3,7 +3,7 @@ import {PATH, SECTION_LABELS} from "@/common/constants/constants.ts";
 import {Outlet} from "react-router";
 
 
-const links = [
+const linksPage = [
     {path: PATH.POPULAR_MOVIES, label: SECTION_LABELS.POPULAR_MOVIES},
     {path: PATH.TOP_RATED_MOVIES, label: SECTION_LABELS.TOP_RATED_MOVIES},
     {path: PATH.UPCOMING_MOVIES, label: SECTION_LABELS.UPCOMING_MOVIES},
@@ -13,10 +13,8 @@ const links = [
 export function CategoryMoviesPage() {
     return (
         <section>
-            <NavBar links={links} />
-            <div>
-                <Outlet />
-            </div>
+            <NavBar links={linksPage}/>
+            <Outlet/>
         </section>
     )
 }

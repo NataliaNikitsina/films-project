@@ -4,10 +4,11 @@ import {SECTION_LABELS} from "@/common/constants/constants.ts";
 import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
 import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
 
+
 export const NowPlayingMovies = () => {
 
     const [currentPage, setCurrentPage] = useState(1)
-    const {data} = useGetNowPlayingMovieQuery({page: 1})
+    const {data} = useGetNowPlayingMovieQuery({page: currentPage})
 
     return (
         <div>

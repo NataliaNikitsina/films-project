@@ -6,7 +6,7 @@ import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
 
 export const PopularMovies = () => {
     const [currentPage, setCurrentPage] = useState(1)
-    const {data} = useGetPopularMovieQuery({page: 1})
+    const {data} = useGetPopularMovieQuery({page: currentPage})
 
     return (
         <div>

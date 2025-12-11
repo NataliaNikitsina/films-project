@@ -12,7 +12,7 @@ import {NowPlayingMovies} from "@/features/pages/CategoryMoviesPage/NowPlayingMo
 
 
 
-export function Routing() {
+export const Routing = () => {
     return (
         <Routes>
             <Route path={PATH.MAIN_PAGE} element={<Main/>}/>
@@ -23,8 +23,9 @@ export function Routing() {
                 <Route path={PATH.NOW_PLAYING_MOVIES} element={<NowPlayingMovies/>}/>
             </Route>
             <Route path={PATH.FILTERED_MOVIES_PAGE} element={<FilteredMoviesPage/>}/>
-            <Route path={PATH.SEARCH_PAGE} element={<SearchPage/>}/>
             <Route path={PATH.FAVORITES_MOVIES_PAGE} element={<FavoritesPage/>}/>
+            <Route path={PATH.SEARCH_PAGE} element={<SearchPage/>}/>
+            {/*<Route path={'*'} element={<div>Page not found</div>}/>*/}
         </Routes>
     )
 }

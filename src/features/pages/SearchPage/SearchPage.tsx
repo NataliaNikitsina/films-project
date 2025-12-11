@@ -1,11 +1,8 @@
 
-
 export function SearchPage() {
 
     return (
-        <>
-            SearchPage
-        </>
+        <div>SearchPage</div>
     )
 }
 

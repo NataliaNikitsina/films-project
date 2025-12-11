@@ -3,11 +3,12 @@ export const PATH = {
     CATEGORY_MOVIES_PAGE: '/category',
     FILTERED_MOVIES_PAGE: '/filter',
     FAVORITES_MOVIES_PAGE: '/favorites',
-    SEARCH_PAGE: '/search ',
-    POPULAR_MOVIES: 'popular ',
-    TOP_RATED_MOVIES: 'top-rated ',
-    UPCOMING_MOVIES: 'upcoming ',
-    NOW_PLAYING_MOVIES: 'now-playing ',
+    SEARCH_PAGE: '/search',
+
+    POPULAR_MOVIES: 'popular',
+    TOP_RATED_MOVIES: 'top-rated',
+    UPCOMING_MOVIES: 'upcoming',
+    NOW_PLAYING_MOVIES: 'now-playing',
 } as const;
 
 export const SECTION_LABELS = {
@@ -20,7 +21,7 @@ export const SECTION_LABELS = {
     TOP_RATED_MOVIES: 'Top Rated ',
     UPCOMING_MOVIES: 'Upcoming ',
     NOW_PLAYING_MOVIES: 'Now Playing ',
-}
+} as const
 
 export const IMAGE_PATH = 'http://image.tmdb.org/t/p/'
 
