@@ -3,7 +3,7 @@ import {
     useGetPopularMovieQuery,
     useGetTopRatedMovieQuery,
     useGetUpcomingMovieQuery
-} from "@/features/moviesApi.ts";
+} from "@/features/api/moviesApi.ts";
 import {SECTION_LABELS} from "@/common/constants/constants.ts";
 
 export const useGetAllCategoryMoviesQuery = () => {

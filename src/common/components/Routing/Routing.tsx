@@ -9,6 +9,7 @@ import {PopularMovies} from "@/features/pages/CategoryMoviesPage/PopularMovies/P
 import {TopRatedMovies} from "@/features/pages/CategoryMoviesPage/TopRatedMovies/TopRatedMovies.tsx";
 import {UpcomingMovies} from "@/features/pages/CategoryMoviesPage/UpcomingMovies/UpcomingMovies.tsx";
 import {NowPlayingMovies} from "@/features/pages/CategoryMoviesPage/NowPlayingMovies/NowPlayingMovies.tsx";
+import {MoviePage} from "@/features/pages/MoviePage/MoviePage.tsx";
 
 
 
@@ -16,6 +17,7 @@ export const Routing = () => {
     return (
         <Routes>
             <Route path={PATH.MAIN_PAGE} element={<Main/>}/>
+            <Route path={'/movies/:movieId'} element={<MoviePage/>}/>
             <Route path={PATH.CATEGORY_MOVIES_PAGE} element={<CategoryMoviesPage/>}>
                 <Route path={PATH.POPULAR_MOVIES} element={<PopularMovies/>}/>
                 <Route path={PATH.TOP_RATED_MOVIES} element={<TopRatedMovies/>}/>

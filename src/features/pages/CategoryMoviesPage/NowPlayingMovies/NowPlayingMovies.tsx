@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {useGetNowPlayingMovieQuery} from "@/features/moviesApi.ts";
+import {useGetNowPlayingMovieQuery} from "@/features/api/moviesApi.ts";
 import {SECTION_LABELS} from "@/common/constants/constants.ts";
 import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
 import {Pagination} from "@/common/components/Pagination/Pagination.tsx";

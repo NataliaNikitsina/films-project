@@ -23,7 +23,7 @@ export const SECTION_LABELS = {
     NOW_PLAYING_MOVIES: 'Now Playing ',
 } as const
 
-export const IMAGE_PATH = 'http://image.tmdb.org/t/p/'
+export const IMAGE_PATH = 'https://image.tmdb.org/t/p/'
 
 export const POSTER_SIZES = {
     // "w92",
@@ -34,3 +34,11 @@ export const POSTER_SIZES = {
     // "w780",
     ORIGINAL: "original"
 }
+
+export const PROFILE_SIZES = {
+    SMALL: 'w45',
+    CARD: "w185",
+    BIG: "h632",
+    ORIGINAL: "original"
+}
+

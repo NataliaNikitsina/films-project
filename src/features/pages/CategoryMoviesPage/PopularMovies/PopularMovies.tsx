@@ -1,4 +1,4 @@
-import {useGetPopularMovieQuery} from "@/features/moviesApi.ts";
+import {useGetPopularMovieQuery} from "@/features/api/moviesApi.ts";
 import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
 import {useState} from "react";
 import {SECTION_LABELS} from "@/common/constants/constants.ts";

@@ -1,7 +1,7 @@
 import {SECTION_LABELS} from "@/common/constants/constants.ts";
 import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
 import {useState} from "react";
-import {useGetTopRatedMovieQuery} from "@/features/moviesApi.ts";
+import {useGetTopRatedMovieQuery} from "@/features/api/moviesApi.ts";
 import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
 
 export const TopRatedMovies = () => {
