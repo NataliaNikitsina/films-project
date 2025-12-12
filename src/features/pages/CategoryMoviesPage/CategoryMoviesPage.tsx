@@ -1,6 +1,7 @@
 import {NavBar} from "@/common/components/Header/NavBar/NavBar.tsx";
 import {PATH, SECTION_LABELS} from "@/common/constants/constants.ts";
-import {Outlet} from "react-router";
+import {Outlet, useNavigate} from "react-router";
+import {useEffect} from "react";
 
 
 const linksPage = [
@@ -11,6 +12,10 @@ const linksPage = [
 ]
 
 export function CategoryMoviesPage() {
+    const navigate = useNavigate();
+    useEffect(() => {
+        navigate(PATH.POPULAR_MOVIES)
+    }, [navigate]);
     return (
         <section>
             <NavBar links={linksPage}/>

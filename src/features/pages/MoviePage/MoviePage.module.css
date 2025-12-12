@@ -2,49 +2,41 @@
     margin: 0 auto;
     width: 100%;
     background: #F0F0ED;
-    border-radius: 5px;
     position: relative;
+    border-radius: 40px;
 }
-.wrapper{
+
+.wrapper {
     display: flex;
     justify-content: space-between;
 }
-.cover {
 
+.cover {
+   width: 100%;
+    border-radius: 40px;
 }
 
 .details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
 
-    .title1 {
-        color: white;
-        font-size: 44px;
-        margin-bottom: 13px;
-        position: relative;
+.title1 {
+    /*color: white;*/
+    font-size: 44px;
+}
 
-        span {
-            position: absolute;
-            top: 3px;
-            margin-left: 12px;
-            background: #C4AF3D;
-            border-radius: 5px;
-            color: #544C21;
-            font-size: 14px;
-            padding: 0 4px;
+.title2 {
+    color: #C7C1BA;
+    font-size: 23px;
+    font-weight: 300;
+}
+.rating{
 
-        }
-    }
+}
 
-    .title2 {
-        color: #C7C1BA;
-        font-size: 23px;
-        font-weight: 300;
-        margin-bottom: 15px;
-    }
-
-
-    .likes {
-        margin-left: 24px;
-    }
+.dopInfo {
 
 }
 
@@ -56,12 +48,8 @@
 
 }
 
-.column1 {
-    padding-left: 50px;
-    padding-top: 120px;
-    width: 220px;
-    float: left;
-    text-align: center;
+.genres {
+
 }
 
 .tag {
@@ -76,11 +64,6 @@
 
 .tag:hover {
     background: #ddd;
-}
-
-.column2 {
-
-    float: left;
 }
 
 .actors {

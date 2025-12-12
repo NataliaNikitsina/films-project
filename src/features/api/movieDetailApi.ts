@@ -7,7 +7,7 @@ export const movieDetailApi = baseApi.injectEndpoints({
             query: (movieId) => ({
                 url: `/movie/${movieId}`,
                 params:{
-                    append_to_response: 'credits'
+                    append_to_response: 'credits,similar',
                 },
             }),
         }),

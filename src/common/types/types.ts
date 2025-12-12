@@ -78,6 +78,7 @@ export type MovieDetailsResponse = {
         cast: CastType[],
         crew: CrewType[],
     }
+    similar: MoviesResponse
 }
 
 export type CastType = {
