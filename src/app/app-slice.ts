@@ -3,11 +3,16 @@ import type {Movie} from "@/common/types/types.ts";
 
 export type ThemeMode = "dark" | "light"
 
+const getInitialState = ():Movie[] => {
+    const savedData = localStorage.getItem('favoritesMovies');
+    return savedData ? JSON.parse(savedData) : [];
+}
+
 export const appSlice = createSlice({
     name: "app",
     initialState: {
         themeMode: "light" as ThemeMode,
-        favoriteMovies: [] as Movie[],
+        favoriteMovies: getInitialState(),
     },
     selectors: {
         selectThemeMode: state => state.themeMode,
@@ -20,6 +25,7 @@ export const appSlice = createSlice({
         addFavoriteMovieAC: create.reducer<{movie: Movie}>((state, action) => {
             state.favoriteMovies.unshift(action.payload.movie);
         }),
+
         deleteFavoriteMovieAC: create.reducer<{movieId: number}>((state, action) => {
             const index = state.favoriteMovies.findIndex(movie => movie.id === action.payload.movieId)
             if (index !== -1) state.favoriteMovies.splice(index, 1)
