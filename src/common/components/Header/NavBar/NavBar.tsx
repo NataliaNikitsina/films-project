@@ -2,7 +2,7 @@ import {NavLink} from "react-router";
 import s from './NavBar.module.css'
 
 type Props = {
-    links: {path: string, label: string}[]
+    links: { path: string, label: string }[]
 }
 
 export function NavBar({links}: Props) {
@@ -11,7 +11,8 @@ export function NavBar({links}: Props) {
             <ul className={s.list}>
                 {links.map((link, index) => (
                     <li key={index} className={s.listItem}>
-                        <NavLink to={link.path} className={s.link}>{link.label}</NavLink>
+                        <NavLink to={link.path}
+                                 className={({isActive}) => isActive ? `${s.link} ${s.active}` : s.link}>{link.label}</NavLink>
                     </li>
                 ))}
             </ul>

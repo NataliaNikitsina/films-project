@@ -11,7 +11,7 @@ export const TopRatedMovies = () => {
     return (
         <div>
             <h3>{SECTION_LABELS.TOP_RATED_MOVIES}</h3>
-            {data && <MoviesList movies={data.results}/>}
+            {data && <MoviesList movies={data.results} />}
             {data && <Pagination
                 currentPage={currentPage}
                 setCurrentPage={setCurrentPage}

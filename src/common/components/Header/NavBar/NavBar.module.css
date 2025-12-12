@@ -41,3 +41,7 @@
     transform: scaleX(1);
     transform-origin: left;
 }
+
+.active {
+    border-bottom: 4px solid #90cea1;
+}

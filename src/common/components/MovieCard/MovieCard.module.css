@@ -50,55 +50,49 @@
     transition: background-color 0.5s ease;
 
     position: absolute;
-    bottom: 20px;
-    right: 20px;
+    bottom: 7%;
+    right: 10%;
 }
 
 .favorite {
     position: absolute;
-    top: 25px;
-    right: 30px;
+
+    top: 10%;
+    right: 15%;
+    opacity: 0;
+}
+
+.poster:hover .favorite{
+    opacity: 1;
+    transition: opacity .3s ease;
 }
 
 .heart {
-    opacity: 0;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     transform: rotate(-45deg);
-    transition: opacity .2s ease;
 
     position: relative;
 }
 
 .heart::before,
 .heart::after {
-    opacity: 0;
     content: '';
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     background-color: inherit;
-    transition: opacity .2s ease;
 }
 
 .heart::before {
-    top: -8px;
+    top: -9px;
     left: 0;
 }
 
 .heart::after {
-    left: 8px;
+    left: 9px;
     top: 0;
-}
-
-.poster:hover .heart {
-    opacity: 1;
-}
-
-.poster:hover .heart::before,
-.poster:hover .heart::after {
-    opacity: 1;
 }
 
 .titleLink {
@@ -108,17 +102,17 @@
 }
 
 .red {
-    background-color: red;
+    background-color: var(--color-red-600);
 }
 
 .yellow {
-    background-color: yellow;
+    background-color: var(--color-yellow-400);
 }
 
 .green {
-    background-color: green;
+    background-color: var(--color-green-600);
 }
 
 .white {
-    background-color: wheat;
+    background-color: var(--color-gray-100);
 }

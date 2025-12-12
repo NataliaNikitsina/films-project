@@ -1,4 +1,4 @@
-import {Route, Routes} from "react-router";
+import {Navigate, Route, Routes} from "react-router";
 import {PATH} from "@/common/constants/constants.ts";
 import {Main} from "@/features/pages/MainPage/Main.tsx";
 import {FilteredMoviesPage} from "@/features/pages/FilteredMoviesPage/FilteredMoviesPage.tsx";
@@ -19,6 +19,7 @@ export const Routing = () => {
             <Route path={PATH.MAIN_PAGE} element={<Main/>}/>
             <Route path={'/movies/:movieId'} element={<MoviePage/>}/>
             <Route path={PATH.CATEGORY_MOVIES_PAGE} element={<CategoryMoviesPage/>}>
+                <Route index element={<Navigate to={PATH.POPULAR_MOVIES} replace />} />
                 <Route path={PATH.POPULAR_MOVIES} element={<PopularMovies/>}/>
                 <Route path={PATH.TOP_RATED_MOVIES} element={<TopRatedMovies/>}/>
                 <Route path={PATH.UPCOMING_MOVIES} element={<UpcomingMovies/>}/>

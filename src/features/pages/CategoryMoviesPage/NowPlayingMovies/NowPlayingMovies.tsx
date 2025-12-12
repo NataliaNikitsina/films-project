@@ -6,7 +6,6 @@ import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
 
 
 export const NowPlayingMovies = () => {
-
     const [currentPage, setCurrentPage] = useState(1)
     const {data} = useGetNowPlayingMovieQuery({page: currentPage})
 

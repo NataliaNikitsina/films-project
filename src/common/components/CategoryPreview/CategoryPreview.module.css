@@ -1,4 +1,38 @@
-.container {
+.preview {
     display: flex;
+    flex-direction: column;
+    gap: 24px;
+    --movie-grid-columns: 6;
+}
+
+.header {
+    display: flex;
+    align-items: center;
     justify-content: space-between;
 }
+
+.title {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.link {
+    text-decoration: none;
+    font-weight: 600;
+    background-color: transparent;
+    color: var(--color-gray-800);
+    padding: 10px 15px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color .2s ease;
+    border: 1px solid var(--color-gray-300);
+}
+
+
+.link:hover {
+    background-color: var(--color-gray-100);
+}
+
