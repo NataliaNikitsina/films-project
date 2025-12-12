@@ -1,12 +1,14 @@
-import {MoviePage} from "@/features/pages/MoviePage/MoviePage.tsx";
+import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
+import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
+import {selectFavoriteMovies} from "@/app/app-slice.ts";
 
 
 export function FavoritesPage() {
+    const favoritesMovies = useAppSelector(selectFavoriteMovies);
 
     return (
         <>
-            FavoritesPage
-            <MoviePage movieId={9300}/>
+            <MoviesList movies={favoritesMovies}/>
         </>
     )
 }
