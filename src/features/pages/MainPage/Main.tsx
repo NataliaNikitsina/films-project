@@ -3,10 +3,8 @@ import {CategoryPreview} from "@/common/components/CategoryPreview/CategoryPrevi
 import {IMAGE_PATH, PATH, SECTION_LABELS} from "@/common/constants/constants.ts";
 import {getRandomNumber} from "@/common/utils/getRandomNumber.ts";
 import s from './Main.module.css'
-import {useNavigate} from "react-router";
-import {useAppDispatch} from "@/common/hooks/useAppDispatch.ts";
-import {type FormEvent, useState} from "react";
-import {setSearchValueAC} from "@/app/app-slice.ts";
+import {useMemo} from "react";
+import {SearchForm} from "@/common/components/SearchForm/SearchForm.tsx";
 
 const links = [
     {path: PATH.POPULAR_MOVIES, label: SECTION_LABELS.POPULAR_MOVIES},
@@ -16,20 +14,12 @@ const links = [
 ]
 
 export function Main() {
-    const [searchValue, srtSearchValue] = useState<string>('')
-    const navigate = useNavigate();
-    const dispatch = useAppDispatch();
     const allCategoryMoviesSliced = useGetAllCategoryMoviesQuery()
     const popularMovies = allCategoryMoviesSliced.popularMoviesAll
+    const randomIndex = useMemo(()=>getRandomNumber(popularMovies.length), [popularMovies])
     let randomCover;
     if(popularMovies.length > 0) {
-        randomCover =IMAGE_PATH + 'original' + popularMovies[getRandomNumber(popularMovies.length)].backdrop_path
-    }
-
-    const handleSearch = (e: FormEvent<HTMLFormElement> ) => {
-        e.preventDefault()
-        dispatch(setSearchValueAC({searchValue}))
-        navigate(PATH.SEARCH_PAGE)
+        randomCover =IMAGE_PATH + 'original' + popularMovies[randomIndex].backdrop_path
     }
 
     return (
@@ -38,10 +28,7 @@ export function Main() {
                 <div className={s.content}>
                     <h1 className={s.title}>Welcome to TMDB</h1>
                     <h2 className={s.subtitle}>Browse highlighted titles from TMDB</h2>
-                    <form className={s.formSearch} onSubmit={handleSearch}>
-                        <input value={searchValue} type={'search'} className={s.search} placeholder={'Search...'} onChange={(e)=>srtSearchValue(e.currentTarget.value)} />
-                        <button className={s.btnSearch} disabled={searchValue.trim().length===0}>Search</button>
-                    </form>
+                    <SearchForm/>
                 </div>
             </div>
             {links.map(((el, index) => (

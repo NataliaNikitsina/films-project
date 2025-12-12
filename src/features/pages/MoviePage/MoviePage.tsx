@@ -4,6 +4,7 @@ import {useGetMovieDetailQuery} from "@/features/api/movieDetailApi.ts";
 import {useParams} from "react-router";
 import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
 import {getSlicedArray} from "@/common/utils/getSlicedArray.ts";
+import noCover from '@/assets/noCover.svg'
 
 
 export const MoviePage = () => {
@@ -37,7 +38,7 @@ export const MoviePage = () => {
             <div className={s.actors}>
                 {getSlicedArray(data.credits.cast).map(el => (
                     <div>
-                        <img src={IMAGE_PATH + PROFILE_SIZES.CARD + el.profile_path} alt="avatar1"/>
+                        <img src={el.profile_path ? IMAGE_PATH + PROFILE_SIZES.CARD + el.profile_path : noCover} alt="avatar1"/>
                         debugger
                         <p>Name {el.name}</p>
                         <p>In the role {el.character}</p>

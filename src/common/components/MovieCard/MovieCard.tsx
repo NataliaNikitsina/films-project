@@ -4,6 +4,7 @@ import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
 import {addFavoriteMovieAC, deleteFavoriteMovieAC, selectFavoriteMovies} from "@/app/app-slice.ts";
 import {useAppDispatch} from "@/common/hooks/useAppDispatch.ts";
 import s from './MovieCard.module.css'
+import noCover from '@/assets/noCover.svg'
 
 type Props = {
     movie: Movie
@@ -13,7 +14,7 @@ export const MovieCard = ({movie}: Props) => {
     const favoritesMovies = useAppSelector(selectFavoriteMovies)
     const dispatch = useAppDispatch();
 
-    const imagePath = IMAGE_PATH + POSTER_SIZES.CARD + movie.poster_path
+    const imagePath = movie.poster_path ? IMAGE_PATH + POSTER_SIZES.CARD + movie.poster_path : noCover
 
     const handleFavorites = () => {
         if (favoritesMovies.includes(movie)) {

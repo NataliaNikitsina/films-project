@@ -6,10 +6,13 @@ import {
 } from "@/features/api/moviesApi.ts";
 import {SECTION_LABELS} from "@/common/constants/constants.ts";
 import {getSlicedArray} from "@/common/utils/getSlicedArray.ts";
+import {useMemo} from "react";
 import {getRandomNumber} from "@/common/utils/getRandomNumber.ts";
 
 export const useGetAllCategoryMoviesQuery = () => {
-    const page = getRandomNumber(5)
+    const page = useMemo(()=>{
+        const number = getRandomNumber(10)
+        return number === 0 ? number + 1 : number}, [])
 
     const {data: popularMovies} = useGetPopularMovieQuery({page})
     const popularMoviesSlice = popularMovies ? getSlicedArray(popularMovies.results) : []
