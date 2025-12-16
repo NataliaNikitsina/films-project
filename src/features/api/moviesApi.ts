@@ -1,5 +1,11 @@
 import {baseApi} from "@/app/baseApi.ts"
-import type {MoviesResponse, MoviesResponseWithDatePeriod, SearchParams} from "@/common/types/types.ts";
+import type {
+    GenresResponse,
+    MoviesResponse,
+    MoviesResponseWithDatePeriod,
+    QueryParams,
+    SearchParams
+} from "@/common/types/types.ts";
 
 export const moviesApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
@@ -37,6 +43,17 @@ export const moviesApi = baseApi.injectEndpoints({
                 params
             }),
         }),
+
+        getFilteredMovies: builder.query<MoviesResponse, QueryParams>({
+            query: (params) => ({
+                url: "/discover/movie",
+                params
+            }),
+        }),
+
+        getGenres: builder.query<GenresResponse, void>({
+            query: () => "/genre/movie/list",
+        }),
     })
 })
 
@@ -45,6 +62,8 @@ export const {
     useGetTopRatedMovieQuery,
     useGetUpcomingMovieQuery,
     useGetNowPlayingMovieQuery,
-    useSearchMoviesQuery
+    useSearchMoviesQuery,
+    useGetFilteredMoviesQuery,
+    useGetGenresQuery
 } = moviesApi
 

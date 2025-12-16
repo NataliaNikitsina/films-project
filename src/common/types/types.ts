@@ -113,11 +113,42 @@ export type CrewType = {
 export type SearchParams = {
     query: string
     include_adult?: boolean
-    language? :string
+    language?: string
     primary_release_year?: string
     page?: number
     region?: string
     year?: string
 }
+
+export type  QueryParams = {
+    sort_by?: Sort_by
+    'vote_average.lte'?: number
+    'vote_average.gte'?: number
+    with_genres?: string,
+}
+
+export type GenresResponse = {
+    genres: {
+        id: number
+        name: string
+    }[]
+}
+
+export const SORT_BY = {
+    POPULARITY_ASC: 'popularity.asc',
+    RELEASE_DATE_ASC: 'primary_release_date.asc',
+    RATING_ASC: 'vote_average_lte.asc',
+    TITLE_ASC: 'title.asc',
+    POPULARITY_DESC: 'popularity.desc',
+    RELEASE_DATE_DESC: 'primary_release_date.desc',
+    RATING_DESC: 'vote_average_lte.desc',
+    TITLE_DESC: 'title.desc',
+} as const
+
+export type Sort_by = (typeof SORT_BY)[keyof typeof SORT_BY]
+
+
+
+
 
 

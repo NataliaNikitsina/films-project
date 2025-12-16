@@ -1,4 +1,4 @@
-import s from "@/features/pages/MainPage/Main.module.css";
+import s from "@/pages/MainPage/Main.module.css";
 import {type ChangeEvent, type FormEvent, useEffect, useState} from "react";
 import {setSearchValueAC} from "@/app/app-slice.ts";
 import {PATH} from "@/common/constants/constants.ts";

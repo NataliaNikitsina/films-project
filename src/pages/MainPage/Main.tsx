@@ -1,4 +1,4 @@
-import {useGetAllCategoryMoviesQuery} from "@/features/pages/MainPage/model/useGetAllCategoryMoviesQuery.ts";
+import {useGetAllCategoryMoviesQuery} from "@/pages/MainPage/model/useGetAllCategoryMoviesQuery.ts";
 import {CategoryPreview} from "@/common/components/CategoryPreview/CategoryPreview.tsx";
 import {IMAGE_PATH, PATH, SECTION_LABELS} from "@/common/constants/constants.ts";
 import {getRandomNumber} from "@/common/utils/getRandomNumber.ts";

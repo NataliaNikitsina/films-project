@@ -1,15 +1,15 @@
 import {Navigate, Route, Routes} from "react-router";
 import {PATH} from "@/common/constants/constants.ts";
-import {Main} from "@/features/pages/MainPage/Main.tsx";
-import {FilteredMoviesPage} from "@/features/pages/FilteredMoviesPage/FilteredMoviesPage.tsx";
-import {SearchPage} from "@/features/pages/SearchPage/SearchPage.tsx";
-import {FavoritesPage} from "@/features/pages/FavoritesPage/FavoritesPage.tsx";
-import {CategoryMoviesPage} from "@/features/pages/CategoryMoviesPage/CategoryMoviesPage.tsx";
-import {PopularMovies} from "@/features/pages/CategoryMoviesPage/PopularMovies/PopularMovies.tsx";
-import {TopRatedMovies} from "@/features/pages/CategoryMoviesPage/TopRatedMovies/TopRatedMovies.tsx";
-import {UpcomingMovies} from "@/features/pages/CategoryMoviesPage/UpcomingMovies/UpcomingMovies.tsx";
-import {NowPlayingMovies} from "@/features/pages/CategoryMoviesPage/NowPlayingMovies/NowPlayingMovies.tsx";
-import {MoviePage} from "@/features/pages/MoviePage/MoviePage.tsx";
+import {Main} from "@/pages/MainPage/Main.tsx";
+import {FilteredMoviesPage} from "@/pages/FilteredMoviesPage/FilteredMoviesPage.tsx";
+import {SearchPage} from "@/pages/SearchPage/SearchPage.tsx";
+import {FavoritesPage} from "@/pages/FavoritesPage/FavoritesPage.tsx";
+import {CategoryMoviesPage} from "@/pages/CategoryMoviesPage/CategoryMoviesPage.tsx";
+import {PopularMovies} from "@/pages/CategoryMoviesPage/PopularMovies/PopularMovies.tsx";
+import {TopRatedMovies} from "@/pages/CategoryMoviesPage/TopRatedMovies/TopRatedMovies.tsx";
+import {UpcomingMovies} from "@/pages/CategoryMoviesPage/UpcomingMovies/UpcomingMovies.tsx";
+import {NowPlayingMovies} from "@/pages/CategoryMoviesPage/NowPlayingMovies/NowPlayingMovies.tsx";
+import {MoviePage} from "@/pages/MoviePage/MoviePage.tsx";
 
 
 
