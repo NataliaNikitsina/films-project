@@ -8,26 +8,33 @@ import {useEffect} from "react";
 
 export function App() {
     const themeMode = useAppSelector(selectThemeMode)
-    const className = `${s.container} ${themeMode === 'dark' ? s.dark : ''}`
     const favoritesMovies = useAppSelector(selectFavoriteMovies);
 
     useEffect(() => {
         const saveData = () => {
             console.log('Data saved!');
             localStorage.setItem('favoritesMovies', JSON.stringify(favoritesMovies));
+            localStorage.setItem('themeMode', JSON.stringify(themeMode));
         };
         window.addEventListener('beforeunload', saveData);
 
         return () => {
             window.removeEventListener('beforeunload', saveData);
         };
-    }, [favoritesMovies]);
+    }, [favoritesMovies, themeMode]);
+
+
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', themeMode);
+    }, [themeMode]);
 
 
   return (
-    <div className={className}>
+    <div className={s.app}>
         <Header />
-        <Routing/>
+        <div className={s.container}>
+            <Routing/>
+        </div>
         <Footer/>
     </div>
   )

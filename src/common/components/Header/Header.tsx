@@ -16,9 +16,11 @@ export function Header() {
 
     return (
         <header className={s.header}>
-            <Logo/>
-            <NavBar links={linksHeader} />
-            <ThemeToggle/>
+            <div className={s.container}>
+                <Logo/>
+                <NavBar links={linksHeader} />
+                <ThemeToggle/>
+            </div>
         </header>
     )
 }
