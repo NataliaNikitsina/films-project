@@ -1,5 +1,6 @@
 import {createSlice} from "@reduxjs/toolkit";
-import {type QueryParams, type Sort_by, SORT_BY} from "@/common/types/types.ts";
+import {type QueryParams, type Sort_by} from "@/common/types/types.ts";
+import {SORT_BY} from "@/common/constants/constants.ts";
 
 export const filterSlice = createSlice({
     name: "filter",

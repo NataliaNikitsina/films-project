@@ -35,7 +35,7 @@ export function App() {
         <Header />
         <div className={s.container}>
             <Routing/>
-            <ToastContainer />
+            <ToastContainer theme={themeMode}/>
         </div>
         <Footer/>
     </div>

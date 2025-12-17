@@ -3,7 +3,7 @@ import {
     useGetPopularMovieQuery,
     useGetTopRatedMovieQuery,
     useGetUpcomingMovieQuery
-} from "@/features/api/moviesApi.ts";
+} from "@/common/api/moviesApi.ts";
 import {SECTION_LABELS} from "@/common/constants/constants.ts";
 import {getSlicedArray} from "@/common/utils/getSlicedArray.ts";
 import {useMemo} from "react";

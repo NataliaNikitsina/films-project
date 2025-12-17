@@ -1,10 +1,10 @@
 import s from './MoviePage.module.css'
 import {IMAGE_PATH, POSTER_SIZES, PROFILE_SIZES} from "@/common/constants/constants.ts";
-import {useGetMovieDetailQuery} from "@/features/api/movieDetailApi.ts";
 import {useParams} from "react-router";
 import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
 import {getSlicedArray} from "@/common/utils/getSlicedArray.ts";
 import noCover from '@/assets/noCover.svg'
+import {useGetMovieDetailQuery} from "@/common/api/moviesApi.ts";
 
 
 export const MoviePage = () => {

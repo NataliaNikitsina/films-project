@@ -1,4 +1,4 @@
-import {useGetUpcomingMovieQuery} from "@/features/api/moviesApi.ts";
+import {useGetUpcomingMovieQuery} from "@/common/api/moviesApi.ts";
 import {useState} from "react";
 import {SECTION_LABELS} from "@/common/constants/constants.ts";
 import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
