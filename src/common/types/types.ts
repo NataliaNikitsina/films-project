@@ -125,6 +125,7 @@ export type  QueryParams = {
     'vote_average.lte'?: number
     'vote_average.gte'?: number
     with_genres?: string,
+    page?: number
 }
 
 export type GenresResponse = {
@@ -137,11 +138,11 @@ export type GenresResponse = {
 export const SORT_BY = {
     POPULARITY_ASC: 'popularity.asc',
     RELEASE_DATE_ASC: 'primary_release_date.asc',
-    RATING_ASC: 'vote_average_lte.asc',
+    RATING_ASC: 'vote_average.asc',
     TITLE_ASC: 'title.asc',
     POPULARITY_DESC: 'popularity.desc',
     RELEASE_DATE_DESC: 'primary_release_date.desc',
-    RATING_DESC: 'vote_average_lte.desc',
+    RATING_DESC: 'vote_average.desc',
     TITLE_DESC: 'title.desc',
 } as const
 

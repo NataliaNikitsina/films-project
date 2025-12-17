@@ -1,0 +1,93 @@
+.container {
+    grid-column: 1;
+    background-color: var(--color-gray-100);
+    border-radius: 12px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.title {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.sortLabel {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 600;
+    color: var(--color-control-text);
+    width: 100%;
+    justify-content: space-between;
+}
+
+.sortSelect {
+    flex: 1;
+    min-width: 200px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid var(--color-control-border);
+    font-size: 14px;
+    background-color: var(--color-control-background);
+    color: var(--color-control-text);
+    transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
+}
+
+.ratingWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.ratingInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-gray-800);
+}
+
+.genresWrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.genreButton {
+    background-color: var(--color-control-background);
+    color: var(--color-control-text);
+    font-size: 14px;
+    line-height: 1.2;
+    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
+    padding: 6px 12px;
+    gap: 8px;
+    border-radius: 999px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid var(--color-control-border);
+}
+.genreButton:hover {
+    box-shadow: 0 0 0 2px rgb(var(--color-blue-600-rgb) / .1);
+    border-color: var(--color-indigo-400);
+}
+
+.active {
+    background-color: var(--color-blue-600);
+    color: var(--color-white);
+    border-color: var(--color-blue-600);
+}
+.active:hover {
+    background-color: var(--color-gray-100);
+}
+
+.reset {
+    background-color: var(--color-blue-600);
+    border-color: transparent;
+    color: var(--color-white);
+}

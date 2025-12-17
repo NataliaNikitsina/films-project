@@ -9,24 +9,31 @@ type Props = {
 export const Pagination = ({pagesCount, currentPage, setCurrentPage}: Props) => {
     if (pagesCount <= 1) return null
     const pages = getPaginationPages(currentPage, pagesCount)
+
+    const handleClick = (page: number) => {
+        if(page !== currentPage){
+            setCurrentPage(Number(page));
+            // window.scrollTo(0, 0)
+        }
+    }
     return (
         <div className={s.pagination}>
             {pages.map((page, idx) =>
-                    page === '...' ? (
-                        <span className={s.ellipsis} key={`ellipsis-${idx}`}>...</span>
-                    ) : (
-                        <button
-                            key={page}
-                            className={
-                                page === currentPage ? `${s.pageButton} ${s.pageButtonActive}` : s.pageButton
-                            }
-                            onClick={() => page !== currentPage && setCurrentPage(Number(page))}
-                            disabled={page === currentPage}
-                            type="button"
-                        >
-                            {page}
-                        </button>
-                    )
+                page === '...' ? (
+                    <span className={s.ellipsis} key={`ellipsis-${idx}`}>...</span>
+                ) : (
+                    <button
+                        key={page}
+                        className={
+                            page === currentPage ? `${s.pageButton} ${s.pageButtonActive}` : s.pageButton
+                        }
+                        onClick={()=>handleClick(page)}
+                        disabled={page === currentPage}
+                        type="button"
+                    >
+                        {page}
+                    </button>
+                )
             )}
         </div>
     )
