@@ -10,6 +10,6 @@ export function ThemeToggle() {
     const toggleTheme = () => dispatch(changeThemeModeAC({themeMode: themeMode==='dark' ? 'light' : 'dark'}))
 
     return (
-        <input type="checkbox" className={s.checkbox} onClick={toggleTheme}/>
+        <input type="checkbox" className={s.checkbox} onChange={toggleTheme} checked={themeMode === 'dark'}/>
     )
 }

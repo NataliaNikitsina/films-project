@@ -5,6 +5,7 @@ import s from './App.module.css'
 import {selectFavoriteMovies, selectThemeMode} from "@/app/app-slice.ts";
 import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
 import {useEffect} from "react";
+import {ToastContainer} from "react-toastify";
 
 export function App() {
     const themeMode = useAppSelector(selectThemeMode)
@@ -34,6 +35,7 @@ export function App() {
         <Header />
         <div className={s.container}>
             <Routing/>
+            <ToastContainer />
         </div>
         <Footer/>
     </div>

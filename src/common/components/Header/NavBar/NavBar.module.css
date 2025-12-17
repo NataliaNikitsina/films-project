@@ -1,19 +1,18 @@
 .list {
     display: flex;
     justify-content: space-between;
-    gap: 30px;
+    gap: 24px;
     list-style-type: none;
 }
 
 .list-item {
-    padding: 6px 0;
+    padding: 6px;
 }
 
 .link {
     position: relative;
-    display: block;
     padding: 4px 0;
-    color: black;
+    color: var(--color-body-text);
     font-size: 24px;
     text-decoration: none;
     text-transform: uppercase;
@@ -34,7 +33,7 @@
 }
 
 .link:hover {
-    color: #95a5a6;
+    color: var(--color-gray-400);
 }
 
 .link:hover::after {

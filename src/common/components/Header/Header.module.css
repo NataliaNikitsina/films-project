@@ -1,14 +1,12 @@
 header {
-    /*position: fixed;*/
-    /*top: 0;*/
-    /*left: 0;*/
-    /*right: 0;*/
-    /*z-index: 1000;*/
-    background: linear-gradient(to right, rgba(1, 180, 228, 0.2), rgba(144, 206, 161, 0.2));
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
     padding: 16px 24px;
-    /*background-color: var(--color-gray-100);*/
-    /*border-bottom: 1px solid var(--color-gray-200);*/
-    border-bottom: 1px solid rgba(1, 180, 228, 0.09);
+    background-color: var(--color-gray-100);
+    border-bottom: 1px solid var(--color-gray-200);
 }
 
 .container {
