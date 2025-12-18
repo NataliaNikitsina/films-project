@@ -7,12 +7,13 @@ import {selectFilter} from "@/pages/FilteredMoviesPage/filter-slice.ts";
 import s from './FilteredMoviesPage.module.css'
 import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
 import {useEffect, useState} from "react";
+import {SkeletonMovies} from "@/common/components/Skeleton/SkeletonMovies.tsx";
 
 
 export function FilteredMoviesPage() {
     const [currentPage, setCurrentPage] = useState(1)
     const filter = useAppSelector(selectFilter)
-    const {data, currentData} = useGetFilteredMoviesQuery({page: currentPage, ...filter})
+    const {data, currentData, isLoading} = useGetFilteredMoviesQuery({page: currentPage, ...filter})
 
     useEffect(() => {
         if(currentData) window.scrollTo(0, 0);
@@ -22,6 +23,7 @@ export function FilteredMoviesPage() {
         <section className={s.filteredMoviesPage}>
             <Filter/>
             <div className={s.moviesWrapper}>
+                {isLoading && <SkeletonMovies/>}
                 {data && <MoviesList movies={data.results}/>}
                 {data && <Pagination
                     currentPage={currentPage}

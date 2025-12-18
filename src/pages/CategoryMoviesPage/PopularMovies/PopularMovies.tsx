@@ -3,10 +3,15 @@ import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
 import {useState} from "react";
 import {SECTION_LABELS} from "@/common/constants/constants.ts";
 import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
+import {SkeletonMovies} from "@/common/components/Skeleton/SkeletonMovies.tsx";
 
 export const PopularMovies = () => {
     const [currentPage, setCurrentPage] = useState(1)
-    const {data} = useGetPopularMovieQuery({page: currentPage})
+    const {data, isLoading} = useGetPopularMovieQuery({page: currentPage})
+
+    if (isLoading) {
+        return <SkeletonMovies/>
+    }
 
     return (
         <div>
