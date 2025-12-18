@@ -2,15 +2,15 @@ import * as z from "zod";
 
 export const MovieSchema = z.object({
     adult: z.boolean(),
-    backdrop_path: z.string(),
+    backdrop_path: z.string().nullable(),
     genre_ids: z.array(z.number().int()),
     id: z.number().int(),
     original_language: z.string(),
     original_title: z.string(),
     overview: z.string(),
     popularity: z.number(),
-    poster_path: z.string(),
-    release_date: z.iso.date(),
+    poster_path:  z.string().nullable(),
+    release_date: z.string(),
     title: z.string(),
     video: z.boolean(),
     vote_average: z.number().nonnegative(),
@@ -24,24 +24,22 @@ export const MoviesResponseSchema = z.object({
     total_results: z.number().int(),
 })
 
-export const DatePeriodSchema = z.object({
+export const MoviesResponseWithDatePeriodSchema = MoviesResponseSchema.extend({
     dates: z.object({
         maximum: z.string(),
         minimum: z.string()
     })
 })
 
-export const MoviesResponseWithDatePeriodSchema = MoviesResponseSchema.and(DatePeriodSchema)
-
 export const CrewSchema = z.object({
     adult: z.boolean(),
-    gender: 1,
+    gender: z.number().int(),
     id: z.number().int(),
     known_for_department: z.string(),
     name: z.string(),
     original_name: z.string(),
-    popularity: z.string(),
-    profile_path: z.string(),
+    popularity: z.number(),
+    profile_path:  z.string().nullable(),
     credit_id: z.string(),
     department: z.string(),
     job: z.string(),
@@ -49,13 +47,13 @@ export const CrewSchema = z.object({
 
 export const CastSchema = z.object({
     adult: z.boolean(),
-    gender: 1,
+    gender: z.number().int(),
     id: z.number().int(),
     known_for_department: z.string(),
     name: z.string(),
     original_name: z.string(),
-    popularity: z.string(),
-    profile_path: z.string(),
+    popularity: z.number(),
+    profile_path:  z.string().nullable(),
     cast_id: z.number().int(),
     character:  z.string(),
     credit_id:  z.string(),
@@ -70,7 +68,7 @@ const SpokenLanguageSchema = z.object({
 
 const ProdactionCompaniesSchema = z.object({
     id: z.number().int(),
-    logo_path: null,
+    logo_path: z.string().nullable(),
     name: z.string(),
     origin_country: z.string(),
 })
@@ -91,22 +89,27 @@ export const GenresResponseSchema = z.object({
 
 export const MovieDetailsResponseSchema = z.object({
     adult: z.boolean(),
-    backdrop_path: z.url(),
-    belongs_to_collection: null,
-    budget: z.number(),
+    backdrop_path: z.string().nullable(),
+    belongs_to_collection: z.object({
+        backdrop_path:  z.string().nullable(),
+        id: z.number(),
+        name: z.string(),
+        poster_path: z.string().nullable(),
+    }).nullable(),
+    budget: z.number().int().nonnegative(),
     genres: z.array(GenreSchema),
     homepage: z.string(),
     id: z.number().int(),
-    imdb_id: "string",
-    origin_country: z.array(z.string()),
+    imdb_id: z.string(),
+    origin_country: z.array(z.string()).optional(),
     original_language: z.string(),
     original_title: z.string(),
     overview: z.string(),
     popularity: z.number(),
-    poster_path: z.string(),
+    poster_path:  z.string().nullable(),
     production_companies:z.array(ProdactionCompaniesSchema),
     production_countries:z.array(ProdactionCountriesSchema),
-    release_date: z.iso.date(),
+    release_date: z.string(),
     revenue: z.number(),
     runtime: z.number(),
     spoken_languages:z.array(SpokenLanguageSchema),
@@ -117,6 +120,7 @@ export const MovieDetailsResponseSchema = z.object({
     vote_average: z.number(),
     vote_count: z.number(),
     credits: z.object({
+        id: z.number().int().optional(),
         cast: z.array(CastSchema),
         crew: z.array(CrewSchema),
     }),

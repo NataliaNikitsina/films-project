@@ -3,6 +3,8 @@ import {Logo} from "@/common/components/Header/Logo/Logo.tsx";
 import {ThemeToggle} from "@/common/components/Header/ThemeToggle/ThemeToggle.tsx";
 import s from './Header.module.css'
 import {PATH, SECTION_LABELS} from "@/common/constants/constants.ts";
+import {LinearProgress} from "@/common/components/LinearProgress/LinearProgress.tsx";
+import {useGlobalLoading} from "@/common/hooks/useGlobalLoading.ts";
 
 const linksHeader = [
     {path: PATH.MAIN_PAGE, label: SECTION_LABELS.MAIN_PAGE},
@@ -13,14 +15,16 @@ const linksHeader = [
 ]
 
 export function Header() {
+    const isGlobalLoading = useGlobalLoading()
 
     return (
         <header className={s.header}>
             <div className={s.container}>
                 <Logo/>
-                <NavBar links={linksHeader} />
+                <NavBar links={linksHeader}/>
                 <ThemeToggle/>
             </div>
+            {isGlobalLoading && <LinearProgress/>}
         </header>
     )
 }
