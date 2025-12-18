@@ -1,5 +1,5 @@
-import s from "@/pages/MainPage/Main.module.css";
-import {type ChangeEvent, type FormEvent, useEffect, useState} from "react";
+import s from './SearchForm.module.css'
+import {type ChangeEvent, type FormEvent, useState} from "react";
 import {setSearchValueAC} from "@/app/app-slice.ts";
 import {PATH} from "@/common/constants/constants.ts";
 import {useNavigate} from "react-router";
@@ -7,18 +7,13 @@ import {useAppDispatch} from "@/common/hooks/useAppDispatch.ts";
 
 export const SearchForm = () => {
     const [searchValue, setSearchValue] = useState<string>('')
-    const [debounced, setDebounced] = useState<string>('')
+
     const navigate = useNavigate();
     const dispatch = useAppDispatch();
 
-    useEffect(() => {
-        const handler = setTimeout(() => setDebounced(searchValue), 1000)
-        return () => clearTimeout(handler)
-    }, [searchValue])
-
     const handleSearch = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        dispatch(setSearchValueAC({searchValue: debounced}))
+        dispatch(setSearchValueAC({searchValue: searchValue.trim()}))
         navigate(PATH.SEARCH_PAGE)
     }
 
@@ -28,9 +23,9 @@ export const SearchForm = () => {
 
     return (
         <form className={s.formSearch} onSubmit={handleSearch}>
-            <input value={searchValue} type={'search'} className={s.search} placeholder={'Search...'}
+            <input value={searchValue} className={s.search} type={'search'} placeholder={'Search...'}
                    onChange={handleOnChange}/>
-            <button className={s.btnSearch} disabled={debounced.trim().length === 0}>Search</button>
+            <button className={s.btnSearch} disabled={searchValue.trim().length === 0}>Search</button>
         </form>
     )
 }

@@ -49,7 +49,7 @@ export const moviesApi = baseApi.injectEndpoints({
                 url: "/search/movie",
                 params
             }),
-            responseSchema: MoviesResponseWithDatePeriodSchema
+            responseSchema: MoviesResponseSchema
         }),
 
         getFilteredMovies: builder.query({
