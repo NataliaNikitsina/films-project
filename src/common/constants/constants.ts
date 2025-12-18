@@ -4,6 +4,7 @@ export const PATH = {
     FILTERED_MOVIES_PAGE: '/filter',
     FAVORITES_MOVIES_PAGE: '/favorites',
     SEARCH_PAGE: '/search',
+    NOT_FOUND: '*',
 
     POPULAR_MOVIES: 'popular',
     TOP_RATED_MOVIES: 'top-rated',
