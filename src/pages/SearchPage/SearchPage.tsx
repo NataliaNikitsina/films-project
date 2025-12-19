@@ -3,7 +3,7 @@ import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
 import {selectSearchValue} from "@/app/app-slice.ts";
 import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
 import {SearchForm} from "@/common/components/SearchForm/SearchForm.tsx";
-import {SkeletonMovies} from "@/common/components/Skeleton/SkeletonMovies.tsx";
+import {SkeletonMovies} from "@/common/components/SkeletonMovies/SkeletonMovies.tsx";
 //import s from './SearchPage.module.css'
 
 export function SearchPage() {

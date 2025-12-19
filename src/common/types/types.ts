@@ -1,6 +1,6 @@
 import * as z from "zod";
 import {
-    DatePeriodSchema, GenresResponseSchema,
+    CastSchema, GenreSchema, GenresResponseSchema,
     MovieDetailsResponseSchema,
     type MovieSchema,
     MoviesResponseSchema, MoviesResponseWithDatePeriodSchema
@@ -10,7 +10,8 @@ import {SORT_BY} from "@/common/constants/constants.ts";
 
 export type Movie = z.infer<typeof MovieSchema>;
 export type MoviesResponse = z.infer<typeof MoviesResponseSchema>;
-export type DatePeriod = z.infer<typeof DatePeriodSchema>;
+export type Cast = z.infer<typeof CastSchema>;
+export type Genre = z.infer<typeof GenreSchema>;
 export type MoviesResponseWithDatePeriod = z.infer<typeof MoviesResponseWithDatePeriodSchema>;
 export type MovieDetailsResponse = z.infer<typeof MovieDetailsResponseSchema>;
 export type GenresResponse = z.infer<typeof GenresResponseSchema>;

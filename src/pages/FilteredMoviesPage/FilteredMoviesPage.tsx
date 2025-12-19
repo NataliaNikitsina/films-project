@@ -7,7 +7,7 @@ import {selectFilter} from "@/pages/FilteredMoviesPage/filter-slice.ts";
 import s from './FilteredMoviesPage.module.css'
 import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
 import {useEffect, useState} from "react";
-import {SkeletonMovies} from "@/common/components/Skeleton/SkeletonMovies.tsx";
+import {SkeletonMovies} from "@/common/components/SkeletonMovies/SkeletonMovies.tsx";
 
 
 export function FilteredMoviesPage() {

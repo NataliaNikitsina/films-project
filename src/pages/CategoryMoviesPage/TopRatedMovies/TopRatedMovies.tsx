@@ -3,7 +3,7 @@ import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
 import {useState} from "react";
 import {useGetTopRatedMovieQuery} from "@/common/api/moviesApi.ts";
 import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
-import {SkeletonMovies} from "@/common/components/Skeleton/SkeletonMovies.tsx";
+import {SkeletonMovies} from "@/common/components/SkeletonMovies/SkeletonMovies.tsx";
 
 export const TopRatedMovies = () => {
     const [currentPage, setCurrentPage] = useState(1)

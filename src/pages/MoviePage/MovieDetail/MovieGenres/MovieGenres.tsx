@@ -1,0 +1,19 @@
+import s from './MovieGenres.module.css'
+import type {Genre} from "@/common/types";
+
+type Props = {
+    genres: Genre[]
+}
+
+export const MovieGenres = ({genres}:Props) => {
+    return (
+        <div className={s.genres}>
+            <h2>Genres</h2>
+            <ul className={s.genreList}>
+                {genres.map((el, index) => (
+                    <li key={index} className={s.genreItem}>{el.name}</li>
+                ))}
+            </ul>
+        </div>
+    )
+}

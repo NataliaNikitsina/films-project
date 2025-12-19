@@ -78,7 +78,7 @@ const ProdactionCountriesSchema = z.object({
     iso_3166_1: z.string(),
 })
 
-const GenreSchema = z.object({
+export const GenreSchema = z.object({
     id: z.number(),
     name: z.string(),
 })
