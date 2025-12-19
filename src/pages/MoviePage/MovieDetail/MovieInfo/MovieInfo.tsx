@@ -1,11 +1,11 @@
 import type {MovieDetailsResponse} from "@/common/types";
-import s from "./MovieCard.module.css"
+import s from "./MovieInfo.module.css"
 
 
 type Props = {
     movie: MovieDetailsResponse
 }
-export const MovieCard = ({movie}: Props) => {
+export const MovieInfo = ({movie}: Props) => {
     return (
         <div className={s.container}>
             <div className={s.title}>
@@ -15,7 +15,7 @@ export const MovieCard = ({movie}: Props) => {
             {movie.title !== movie.original_title &&
                 <span className={s.originalTitle}>Original: {movie.original_title}</span>}
             <div className={s.wrapper}>
-                <span className={s.rating}>{movie.vote_average}</span>
+                <span className={s.rating}>{movie.vote_average.toFixed(1)}</span>
                 <span className={s.info}>Time: {movie.runtime} min</span>
                 <span className={s.info}>Release date: {movie.release_date}</span>
             </div>

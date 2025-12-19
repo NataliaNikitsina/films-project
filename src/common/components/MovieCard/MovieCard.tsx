@@ -36,7 +36,7 @@ export const MovieCard = ({movie}: Props) => {
                 <a className={s.posterLink} href={`/movies/${movie.id}`}>
                     <img className={s.image} src={imagePath} alt={'movie poster'}/>
                 </a>
-                <div className={`${s.rating} ${ratingColorStyle}`}>{movie.vote_average}</div>
+                <div className={`${s.rating} ${ratingColorStyle}`}>{movie.vote_average.toFixed(1)}</div>
                 <div className={s.favorite}>
                     <div className={`${s.heart} ${heartColorStyle}`} onClick={handleFavorites}/>
                 </div>
