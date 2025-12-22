@@ -9,6 +9,8 @@
     line-height: 1.5;
     font-weight: 400;
 
+    scroll-behavior: smooth;
+
     -moz-osx-font-smoothing: grayscale;
 
     --color-white: #ffffff;

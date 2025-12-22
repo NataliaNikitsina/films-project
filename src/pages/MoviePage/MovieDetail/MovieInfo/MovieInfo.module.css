@@ -60,3 +60,15 @@
     color: var(--color-gray-600);
     font-weight: 500;
 }
+
+.red {
+    background-color: var(--color-red-600);
+}
+
+.yellow {
+    background-color: var(--color-yellow-400);
+}
+
+.green {
+    background-color: var(--color-green-600);
+}

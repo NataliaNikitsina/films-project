@@ -59,6 +59,7 @@ export const Filter = () => {
             'vote_average.lte': 10,
             with_genres: '',
         }))
+        setValue([0, 10])
     }
 
     return (

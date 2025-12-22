@@ -6,6 +6,7 @@ import {selectFavoriteMovies, selectThemeMode} from "@/app/app-slice.ts";
 import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
 import {useEffect} from "react";
 import {ToastContainer} from "react-toastify";
+import {ScrollToTop} from "@/common/components/ScrollToTop/ScrollToTop .tsx";
 
 export function App() {
     const themeMode = useAppSelector(selectThemeMode)
@@ -32,6 +33,7 @@ export function App() {
 
   return (
     <div className={s.app}>
+        <ScrollToTop/>
         <Header />
         <div className={s.container}>
             <Routing/>

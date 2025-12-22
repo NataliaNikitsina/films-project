@@ -8,6 +8,7 @@ import {
     type QueryParams,
     type SearchParams
 } from "@/common/types";
+import {withZodCatch} from "@/common/utils/withZodCatch.ts";
 
 
 export const moviesApi = baseApi.injectEndpoints({
@@ -17,7 +18,7 @@ export const moviesApi = baseApi.injectEndpoints({
                 url: "/movie/popular",
                 params: page,
             }),
-            responseSchema: MoviesResponseSchema,
+            ...withZodCatch(MoviesResponseSchema),
         }),
 
         getTopRatedMovie: builder.query({
@@ -25,7 +26,7 @@ export const moviesApi = baseApi.injectEndpoints({
                 url: "/movie/top_rated",
                 params: page,
             }),
-            responseSchema: MoviesResponseSchema,
+            ...withZodCatch(MoviesResponseSchema),
         }),
 
         getUpcomingMovie: builder.query({
@@ -33,7 +34,7 @@ export const moviesApi = baseApi.injectEndpoints({
                 url: "/movie/upcoming",
                 params: page,
             }),
-            responseSchema: MoviesResponseWithDatePeriodSchema
+            ...withZodCatch(MoviesResponseWithDatePeriodSchema),
         }),
 
         getNowPlayingMovie: builder.query({
@@ -41,7 +42,7 @@ export const moviesApi = baseApi.injectEndpoints({
                 url: "/movie/now_playing",
                 params: page,
             }),
-            responseSchema: MoviesResponseWithDatePeriodSchema
+            ...withZodCatch(MoviesResponseWithDatePeriodSchema),
         }),
 
         searchMovies: builder.query({
@@ -49,7 +50,7 @@ export const moviesApi = baseApi.injectEndpoints({
                 url: "/search/movie",
                 params
             }),
-            responseSchema: MoviesResponseSchema
+            ...withZodCatch(MoviesResponseSchema),
         }),
 
         getFilteredMovies: builder.query({
@@ -57,12 +58,12 @@ export const moviesApi = baseApi.injectEndpoints({
                 url: "/discover/movie",
                 params
             }),
-            responseSchema: MoviesResponseSchema
+            ...withZodCatch(MoviesResponseSchema),
         }),
 
         getGenres: builder.query<GenresResponse, void>({
             query: () => "/genre/movie/list",
-            responseSchema: GenresResponseSchema
+            ...withZodCatch(GenresResponseSchema),
         }),
 
         getMovieDetail: builder.query({
@@ -72,7 +73,7 @@ export const moviesApi = baseApi.injectEndpoints({
                     append_to_response: 'credits,similar',
                 },
             }),
-            responseSchema: MovieDetailsResponseSchema,
+            ...withZodCatch(MovieDetailsResponseSchema),
         }),
     })
 })

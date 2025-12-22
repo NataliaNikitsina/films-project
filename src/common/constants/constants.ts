@@ -18,10 +18,10 @@ export const SECTION_LABELS = {
     FILTERED_MOVIES_PAGE: 'Filtered movies',
     FAVORITES_MOVIES_PAGE: 'Favorites',
     SEARCH_PAGE: 'Search',
-    POPULAR_MOVIES: 'Popular ',
-    TOP_RATED_MOVIES: 'Top Rated ',
-    UPCOMING_MOVIES: 'Upcoming ',
-    NOW_PLAYING_MOVIES: 'Now Playing ',
+    POPULAR_MOVIES: 'Popular Movies',
+    TOP_RATED_MOVIES: 'Top Rated Movies',
+    UPCOMING_MOVIES: 'Upcoming Movies',
+    NOW_PLAYING_MOVIES: 'Now Playing Movies',
 } as const
 
 export const IMAGE_PATH = 'https://image.tmdb.org/t/p/'
