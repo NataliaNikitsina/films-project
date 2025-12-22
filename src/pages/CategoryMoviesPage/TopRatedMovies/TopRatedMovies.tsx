@@ -1,7 +1,7 @@
 import {SECTION_LABELS} from "@/common/constants/constants.ts";
 import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
 import {useState} from "react";
-import {useGetTopRatedMovieQuery} from "@/common/api/moviesApi.ts";
+import {useGetTopRatedMovieQuery} from "@/pages/api/moviesApi.ts";
 import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
 import {SkeletonMovies} from "@/common/components/SkeletonMovies/SkeletonMovies.tsx";
 

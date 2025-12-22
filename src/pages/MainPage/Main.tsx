@@ -5,6 +5,7 @@ import {getRandomNumber} from "@/common/utils/getRandomNumber.ts";
 import s from './Main.module.css'
 import {useMemo} from "react";
 import {SearchForm} from "@/common/components/SearchForm/SearchForm.tsx";
+import {SkeletonMainPage} from "@/common/components/SkeletonMainPage/SkeletonMainPage.tsx";
 
 const links = [
     {path: PATH.POPULAR_MOVIES, label: SECTION_LABELS.POPULAR_MOVIES},
@@ -21,6 +22,8 @@ export function Main() {
     if(popularMovies.length > 0) {
         randomCover =IMAGE_PATH + 'original' + popularMovies[randomIndex].backdrop_path
     }
+
+    if(allCategoryMoviesSliced.isLoading) return <SkeletonMainPage/>
 
     return (
         <section>

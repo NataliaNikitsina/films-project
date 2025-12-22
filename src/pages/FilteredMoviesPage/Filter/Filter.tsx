@@ -6,7 +6,7 @@ import {type ChangeEvent, useEffect, useState} from "react";
 import s from './Filter.module.css'
 import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
 import {SORT_BY} from "@/common/constants/constants.ts";
-import {useGetGenresQuery} from "@/common/api/moviesApi.ts";
+import {useGetGenresQuery} from "@/pages/api/moviesApi.ts";
 
 
 export const Filter = () => {

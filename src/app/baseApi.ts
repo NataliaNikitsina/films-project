@@ -4,6 +4,12 @@ import {handleErrors} from "@/common/utils/handleError.ts";
 export const baseApi = createApi({
     reducerPath: 'baseApi',
     baseQuery: async (args, api, extraOptions)=>{
+
+        // await new Promise((resolve)=>{
+        //     setTimeout(()=>resolve, 2000)
+        // })
+
+
         const res = await fetchBaseQuery({
         baseUrl: 'https://api.themoviedb.org/3',
         headers: {

@@ -1,7 +1,7 @@
 import "react-range-slider-input/dist/style.css";
 import {Filter} from "@/pages/FilteredMoviesPage/Filter/Filter.tsx";
 import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
-import {useGetFilteredMoviesQuery} from "@/common/api/moviesApi.ts";
+import {useGetFilteredMoviesQuery} from "@/pages/api/moviesApi.ts";
 import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
 import {selectFilter} from "@/pages/FilteredMoviesPage/filter-slice.ts";
 import s from './FilteredMoviesPage.module.css'
