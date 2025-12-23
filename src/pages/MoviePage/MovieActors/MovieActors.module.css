@@ -1,14 +1,13 @@
 .container {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--item-gap);
 }
 
 .actors {
-    color: var(--color-body-text);
     display: grid;
     grid-template-columns: repeat(var(--movie-grid-columns, 6), minmax(0, 1fr));
-    gap: 24px;
+    gap: var(--item-gap);
 }
 
 .actor {
@@ -20,14 +19,11 @@
 }
 
 .photo {
-    width: 160px;
+    max-width: 160px;
+    width: 100%;
     height: 160px;
     overflow: hidden;
     border-radius: 50%;
-    background-color: var(--color-gray-200);
-    display: flex;
-    align-items: center;
-    justify-content: center;
 
     img {
         cursor: pointer;
@@ -45,15 +41,11 @@
     display: flex;
     flex-direction: column;
     gap: 4px;
-}
-.name {
-    margin: 0;
-    font-size: 20px;
-    font-weight: 600;
+    font-size: var(--font-size-l);
+    font-weight: 700;
 }
 
 .role {
-    margin: 0;
-    font-size: 16px;
+    font-size:  var(--font-size-s);
     color: var(--color-gray-500);
 }

@@ -1,4 +1,4 @@
-import s from './Main.module.css'
+import s from './MainPage.module.css'
 import {useMemo} from "react";
 import {PATH, POSTER_SIZES, SECTION_LABELS} from "@/common/constants";
 import {useGetAllCategoryMoviesQuery} from "@/pages/MainPage/hooks";
@@ -32,7 +32,7 @@ export function MainPage() {
 
     return (
         <section>
-            <div className={s.backdrop} style={{backgroundImage: `linear-gradient(rgba(4, 21, 45, 0) 0%, rgb(18, 18, 18) 79.17%), url(${randomCover})`}}>
+            <div className={s.main} style={{backgroundImage: `linear-gradient(rgba(4, 21, 45, 0) 0%, rgb(18, 18, 18) 79.17%), url(${randomCover})`}}>
                 <div className={s.content}>
                     <h1 className={s.title}>Welcome to TMDB</h1>
                     <h2 className={s.subtitle}>Browse highlighted titles from TMDB</h2>

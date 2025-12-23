@@ -3,7 +3,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;
+    z-index: 999;
     background-color: var(--color-gray-100);
     border-bottom: 1px solid var(--color-gray-200);
 }

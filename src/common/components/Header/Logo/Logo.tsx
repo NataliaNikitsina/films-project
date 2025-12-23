@@ -1,15 +1,13 @@
 import logo from '../../../../assets/images/logo.svg'
 import s from './Logo.module.css'
-import {useNavigate} from "react-router";
 import {PATH} from "@/common/constants/constants.ts";
+import {NavLink} from "react-router";
 
 
 export function Logo() {
-    const navigate = useNavigate()
-    const handleClick = () => navigate(PATH.MAIN_PAGE)
     return (
-        <div onClick={handleClick}>
+        <NavLink to={PATH.MAIN_PAGE}>
             <img className={s.logo} src={logo} alt="Logo" />
-        </div>
+        </NavLink>
     )
 }

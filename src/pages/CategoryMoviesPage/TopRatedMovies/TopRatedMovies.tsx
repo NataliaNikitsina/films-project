@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useGetTopRatedMovieQuery} from "@/pages/api";
 import {MoviesList, Pagination, SkeletonMovies} from "@/common/components";
 import {SECTION_LABELS} from "@/common/constants";
@@ -7,6 +7,7 @@ import {SECTION_LABELS} from "@/common/constants";
 export const TopRatedMovies = () => {
     const [currentPage, setCurrentPage] = useState(1)
     const {data, isLoading} = useGetTopRatedMovieQuery({page: currentPage})
+    useEffect(() => {window.scrollTo(0, 0)}, [data])
 
     if (isLoading) {
         return <SkeletonMovies/>
@@ -14,7 +15,7 @@ export const TopRatedMovies = () => {
 
     return (
         <div>
-            <h3>{SECTION_LABELS.TOP_RATED_MOVIES}</h3>
+            <h2>{SECTION_LABELS.TOP_RATED_MOVIES}</h2>
             {data && <MoviesList movies={data.results} />}
             {data && <Pagination
                 currentPage={currentPage}

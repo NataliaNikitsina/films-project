@@ -13,7 +13,6 @@ export const Pagination = ({pagesCount, currentPage, setCurrentPage}: Props) => 
     const handleClick = (page: number) => {
         if(page !== currentPage){
             setCurrentPage(Number(page));
-            // window.scrollTo(0, 0)
         }
     }
     return (

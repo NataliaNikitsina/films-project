@@ -8,20 +8,17 @@
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    margin: 0;
-    padding: 0;
     list-style: none;
 }
 
 .genreItem {
-    padding: 6px 12px;
+    padding: 8px 16px;
     border-radius: 999px;
     background-color: var(--color-gray-200);
-    font-size: 14px;
-    color: var(--color-gray-800);
+    font-size: var(--font-size-s);
     cursor: pointer;
 }
 
 .genreItem:hover {
-    background: #ddd;
+    background: var(--color-gray-100);
 }

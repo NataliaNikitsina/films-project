@@ -6,7 +6,7 @@ import {PATH, SECTION_LABELS} from "@/common/constants/constants.ts";
 import {LinearProgress} from "@/common/components/LinearProgress/LinearProgress.tsx";
 import {useGlobalLoading} from "@/common/hooks/useGlobalLoading.ts";
 
-const linksHeader = [
+const headerLinks = [
     {path: PATH.MAIN_PAGE, label: SECTION_LABELS.MAIN_PAGE},
     {path: PATH.CATEGORY_MOVIES_PAGE, label: SECTION_LABELS.CATEGORY_MOVIES_PAGE},
     {path: PATH.FILTERED_MOVIES_PAGE, label: SECTION_LABELS.FILTERED_MOVIES_PAGE},
@@ -21,7 +21,7 @@ export function Header() {
         <header className={s.header}>
             <div className={s.container}>
                 <Logo/>
-                <NavBar links={linksHeader}/>
+                <NavBar links={headerLinks}/>
                 <ThemeToggle/>
             </div>
             {isGlobalLoading && <LinearProgress/>}

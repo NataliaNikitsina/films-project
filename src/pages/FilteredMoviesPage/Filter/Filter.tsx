@@ -8,7 +8,6 @@ import {SORT_BY} from "@/common/constants";
 import RangeSlider from 'react-range-slider-input'
 
 
-
 export const Filter = () => {
     const filter = useAppSelector(selectFilter)
     const [value, setValue] = useState<[number, number]>([0, 10]);
@@ -63,39 +62,33 @@ export const Filter = () => {
     }
 
     return (
-        <aside className={s.container}>
-            <h2 className={s.title}>Filters/Sort</h2>
-            <div>
-                <label className={s.sortLabel}>Sort By:
-                    <select className={s.sortSelect} value={filter.sort_by} onChange={handleSelectFilter}>
-                        <option value={SORT_BY.POPULARITY_DESC}>Popularity ↓</option>
-                        <option value={SORT_BY.POPULARITY_ASC}>Popularity ↑</option>
-                        <option value={SORT_BY.RATING_DESC}>Rating ↓</option>
-                        <option value={SORT_BY.RATING_ASC}>Rating ↑</option>
-                        <option value={SORT_BY.RELEASE_DATE_DESC}>Release date ↓</option>
-                        <option value={SORT_BY.RELEASE_DATE_ASC}>Release date ↑</option>
-                        <option value={SORT_BY.TITLE_DESC}>Title A-Z</option>
-                        <option value={SORT_BY.TITLE_ASC}>Title Z-A</option>
-                    </select>
-                </label>
-            </div>
+        <aside className={s.filter}>
+            <h2>Filters/Sort</h2>
+            <label className={s.sortLabel}>Sort By:
+                <select className={s.sortSelect} value={filter.sort_by} onChange={handleSelectFilter}>
+                    <option value={SORT_BY.POPULARITY_DESC}>Popularity ↓</option>
+                    <option value={SORT_BY.POPULARITY_ASC}>Popularity ↑</option>
+                    <option value={SORT_BY.RATING_DESC}>Rating ↓</option>
+                    <option value={SORT_BY.RATING_ASC}>Rating ↑</option>
+                    <option value={SORT_BY.RELEASE_DATE_DESC}>Release date ↓</option>
+                    <option value={SORT_BY.RELEASE_DATE_ASC}>Release date ↑</option>
+                    <option value={SORT_BY.TITLE_DESC}>Title A-Z</option>
+                    <option value={SORT_BY.TITLE_ASC}>Title Z-A</option>
+                </select>
+            </label>
             <div className={s.ratingWrapper}>
                 <div className={s.ratingInfo}>
                     <span>Rating</span>
                     <span>{`${debounced[0]} - ${debounced[1]}`}</span>
                 </div>
-                <div>
-                    <RangeSlider min={0} max={10} step={0.1} value={value} onInput={setValue}/>
-                </div>
+                <RangeSlider min={0} max={10} step={0.1} value={value} onInput={setValue}/>
             </div>
             <div className={s.genresWrapper}>
                 {genres?.genres.map((genre) => (<button
                     className={filter.with_genres.includes(genre.id.toString()) ? `${s.genreButton} ${s.active}` : s.genreButton}
                     key={genre.id} onClick={() => handleGenresFilter(genre.id)}>{genre.name}</button>))}
             </div>
-            <div>
-                <button className={`${s.genreButton} ${s.reset}`} onClick={handleResetFilter}>Reset filters</button>
-            </div>
+            <button className={`${s.genreButton} ${s.reset}`} onClick={handleResetFilter}>Reset filters</button>
         </aside>
     )
 

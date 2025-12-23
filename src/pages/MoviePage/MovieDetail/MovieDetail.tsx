@@ -27,7 +27,7 @@ export const MovieDetail = ({movie}: Props) => {
             <img src={imagePath} alt="Movie poster" className={s.cover}/>
             <div className={s.details}>
                 <MovieInfo movie={movie}/>
-                <p className={s.info}>{movie.overview}</p>
+                <p className={s.description}>{movie.overview}</p>
                 <MovieGenres genres={movie.genres} />
             </div>
         </div>

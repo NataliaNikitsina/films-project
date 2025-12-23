@@ -1,9 +1,10 @@
 import {Outlet} from "react-router";
 import {PATH, SECTION_LABELS} from "@/common/constants";
 import {NavBar} from "@/common/components";
+import s from "./CategoryMoviesPage.module.css"
 
 
-const linksPage = [
+const pageLinks = [
     {path: PATH.POPULAR_MOVIES, label: SECTION_LABELS.POPULAR_MOVIES},
     {path: PATH.TOP_RATED_MOVIES, label: SECTION_LABELS.TOP_RATED_MOVIES},
     {path: PATH.UPCOMING_MOVIES, label: SECTION_LABELS.UPCOMING_MOVIES},
@@ -12,8 +13,8 @@ const linksPage = [
 
 export function CategoryMoviesPage() {
     return (
-        <section>
-            <NavBar links={linksPage}/>
+        <section className={s.container}>
+            <NavBar links={pageLinks}/>
             <Outlet/>
         </section>
     )

@@ -8,7 +8,7 @@ type Props = {
 export const MovieGenres = ({genres}:Props) => {
     return (
         <div className={s.genres}>
-            <h2>Genres</h2>
+            <h4>Genres</h4>
             <ul className={s.genreList}>
                 {genres.map((el, index) => (
                     <li key={index} className={s.genreItem}>{el.name}</li>

@@ -1,9 +1,9 @@
-.backdrop {
+.main {
     position: relative;
     width: 100vw;
     margin-left: calc(50% - 50vw);
     margin-right: calc(50% - 50vw);
-    height: 700px;
+    min-height: 700px;
     display: flex;
     align-items: center;
     background-size: cover;
@@ -18,20 +18,20 @@
     max-width: 1200px;
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: var(--item-gap);
 }
 
 .title {
     margin: 0;
-    font-size: 48px;
+    font-size: var(--font-size-xxxl);
     font-weight: 800;
     text-transform: uppercase;
-    color: white;
+    color: var(--color-white);
 }
  .subtitle {
      margin: 0;
-     font-size: 24px;
+     font-size: var(--font-size-xl);
      font-weight: 600;
-     color: white;
+     color: var(--color-white);
  }
 

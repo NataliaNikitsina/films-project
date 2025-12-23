@@ -1,11 +1,12 @@
-import {POSTER_SIZES} from "@/common/constants/constants.ts";
-import type {Movie} from "@/common/types/types.ts";
-import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
-import {addFavoriteMovieAC, deleteFavoriteMovieAC, selectFavoriteMovies} from "@/app/app-slice.ts";
-import {useAppDispatch} from "@/common/hooks/useAppDispatch.ts";
 import s from './MovieCard.module.css'
 import noCover from '@/assets/images/noCover.svg'
-import {useGetConfigurationQuery} from "@/pages/api/moviesApi.ts";
+import type {Movie} from "@/common/types";
+import {useGetConfigurationQuery} from "@/pages/api";
+import {useAppDispatch, useAppSelector} from "@/common/hooks";
+import {addFavoriteMovieAC, deleteFavoriteMovieAC, selectFavoriteMovies} from "@/app";
+import {POSTER_SIZES} from "@/common/constants";
+import {NavLink} from "react-router";
+
 
 type Props = {
     movie: Movie
@@ -44,17 +45,17 @@ export const MovieCard = ({movie}: Props) => {
     return (
         <article className={s.card}>
             <div className={s.poster}>
-                <a className={s.posterLink} href={`/movies/${movie.id}`}>
+                <NavLink className={s.posterLink} to={`/movies/${movie.id}`}>
                     <img className={s.image} src={imagePath} alt={'movie poster'}/>
-                </a>
+                </NavLink>
                 <div className={`${s.rating} ${ratingColorStyle}`}>{movie.vote_average.toFixed(1)}</div>
-                <div className={s.favorite}>
-                    <div className={`${s.heart} ${heartColorStyle}`} onClick={handleFavorites}/>
+                <div className={s.favorite} onClick={handleFavorites}>
+                    <div className={`${s.heart} ${heartColorStyle}`}/>
                 </div>
             </div>
-            <a className={s.titleLink} href={`/movies/${movie.id}`}>
+            <NavLink className={s.titleLink} to={`/movies/${movie.id}`}>
                 <h4>{movie.title}</h4>
-            </a>
+            </NavLink>
         </article>
     )
 }

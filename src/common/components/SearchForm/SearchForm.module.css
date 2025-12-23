@@ -14,7 +14,7 @@
     padding: 12px 16px;
     border-radius: 999px;
     border: 1px solid var(--color-control-border);
-    font-size: 16px;
+    font-size: var(--font-size-s);
     background-color: var(--color-control-background);
     color: var(--color-control-text);
     cursor: pointer;
@@ -29,13 +29,9 @@
     background-color: var(--color-blue-600);
     color: var(--color-white);
     padding: 8px 16px;
-    font-size: 16px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
+    font-size: var(--font-size-s);
     border-radius: 999px;
-    font-weight: 600;
+    font-weight: 400;
     cursor: pointer;
     transition: background-color .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease;
     border: 1px solid transparent;

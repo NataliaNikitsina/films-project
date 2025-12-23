@@ -33,8 +33,8 @@
 
 .checkbox:checked::before{
     left: 34px;
-    box-shadow: 0 8px 60px #01b4e4,
-    inset 4px 4px #01b4e4,
-    inset -4px 4px #01b4e4;
-    background: linear-gradient(to right,#01b4e4,#90cea1);
+    box-shadow: 0 8px 60px var(--tmdb-sky),
+    inset 4px 4px var(--tmdb-sky),
+    inset -4px 4px var(--tmdb-sky);
+    background: linear-gradient(to right,var(--tmdb-sky),var(--tmdb-green));
 }

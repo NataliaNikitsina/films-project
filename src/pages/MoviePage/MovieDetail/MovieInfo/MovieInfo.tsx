@@ -11,7 +11,7 @@ export const MovieInfo = ({movie}: Props) => {
 
     return (
         <div className={s.container}>
-            <div className={s.title}>
+            <div className={s.header}>
                 <h1>{movie.title}</h1>
                 <button className={s.btn} onClick={() => history.back()}>Back</button>
             </div>
@@ -19,8 +19,8 @@ export const MovieInfo = ({movie}: Props) => {
                 <span className={s.originalTitle}>Original: {movie.original_title}</span>}
             <div className={s.wrapper}>
                 <span className={`${s.rating} ${ratingColorStyle}`}>{movie.vote_average.toFixed(1)}</span>
-                <span className={s.info}>Time: {movie.runtime} min</span>
-                <span className={s.info}>Release date: {movie.release_date}</span>
+                <span>Time: {movie.runtime} min</span>
+                <span>Release date: {movie.release_date}</span>
             </div>
         </div>
     )

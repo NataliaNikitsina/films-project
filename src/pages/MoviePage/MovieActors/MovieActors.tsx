@@ -24,8 +24,8 @@ export const MovieActors = ({cast}: Props) => {
                                  alt="avatar1"/>
                         </div>
                         <div className={s.info}>
-                            <p className={s.name}>{el.name}</p>
-                            <p className={s.role}>In the role {el.character}</p>
+                            <p>{el.name}</p>
+                            <p className={s.role}>Role: {el.character}</p>
                         </div>
 
                     </div>

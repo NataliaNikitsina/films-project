@@ -6,7 +6,7 @@ import {useAppSelector} from "@/common/hooks";
 import {Filter} from "@/pages/FilteredMoviesPage/Filter";
 import {MoviesList, Pagination, SkeletonMovies} from "@/common/components";
 import {selectFilter} from "@/pages/FilteredMoviesPage/api";
-
+import {SECTION_LABELS} from "@/common/constants";
 
 
 export function FilteredMoviesPage() {
@@ -15,13 +15,14 @@ export function FilteredMoviesPage() {
     const {data, currentData, isLoading} = useGetFilteredMoviesQuery({page: currentPage, ...filter})
 
     useEffect(() => {
-        if(currentData) window.scrollTo(0, 0);
-    }, [currentData]);
+        if (currentData) window.scrollTo(0, 0);
+    }, [data, currentData]);
 
     return (
         <section className={s.filteredMoviesPage}>
             <Filter/>
             <div className={s.moviesWrapper}>
+                <h1>{SECTION_LABELS.FILTERED_MOVIES_PAGE}</h1>
                 {isLoading && <SkeletonMovies/>}
                 {data && <MoviesList movies={data.results}/>}
                 {data && <Pagination

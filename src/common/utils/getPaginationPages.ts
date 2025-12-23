@@ -1,4 +1,4 @@
-const SIBLING_COUNT = 2
+const SIBLING_COUNT = 1
 
 export const getPaginationPages = (currentPage: number, pagesCount: number): (number | '...')[] => {
     if (pagesCount <= 1) return []

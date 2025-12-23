@@ -20,7 +20,7 @@ export const Routing = () => {
     return (
         <Routes>
             <Route path={PATH.MAIN_PAGE} element={<MainPage/>}/>
-            <Route path={'/movies/:movieId'} element={<MoviePage/>}/>
+            <Route path={PATH.MOVIE_PAGE} element={<MoviePage/>}/>
             <Route path={PATH.CATEGORY_MOVIES_PAGE} element={<CategoryMoviesPage/>}>
                 <Route index element={<Navigate to={PATH.POPULAR_MOVIES} replace/>}/>
                 <Route path={PATH.POPULAR_MOVIES} element={<PopularMovies/>}/>

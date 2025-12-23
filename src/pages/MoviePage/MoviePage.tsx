@@ -12,7 +12,7 @@ import {SimilarMovies} from "@/pages/MoviePage/SimilarMovies";
 
 export const MoviePage = () => {
     const {movieId} = useParams()
-    const {data, isLoading} = useGetMovieDetailQuery(+movieId!)
+    const {data, isLoading} = useGetMovieDetailQuery(movieId!)
 
     if (isLoading) return <SkeletonMovieDetail/>
     return (

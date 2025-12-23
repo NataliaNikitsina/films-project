@@ -8,10 +8,10 @@ type Props = {
 
 export const MoviesList = ({movies}: Props) => {
     return (
-        <div className={s.container}>
+        <section className={s.container}>
             {movies.map((movie) => (
                 <MovieCard key={movie.id} movie={movie} />
             ))}
-        </div>
+        </section>
     )
 }

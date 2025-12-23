@@ -2,6 +2,8 @@ import {useEffect} from "react";
 import {selectFavoriteMovies} from "@/app";
 import {useAppSelector} from "@/common/hooks";
 import {MoviesList} from "@/common/components";
+import {SECTION_LABELS} from "@/common/constants";
+import s from "./FavoritesPage.module.css"
 
 
 export function FavoritesPage() {
@@ -12,9 +14,10 @@ export function FavoritesPage() {
     }, [favoritesMovies]);
 
     return (
-        <>
+        <section className={s.container}>
+            <h1>{SECTION_LABELS.FAVORITES_MOVIES_PAGE}</h1>
             <MoviesList movies={favoritesMovies}/>
-        </>
+        </section>
     )
 }
 

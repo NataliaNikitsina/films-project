@@ -73,7 +73,7 @@ export const moviesApi = baseApi.injectEndpoints({
         }),
 
         getMovieDetail: builder.query({
-            query: (movieId: number) => ({
+            query: (movieId: string) => ({
                 url: `/movie/${movieId}`,
                 params:{
                     append_to_response: 'credits,similar',
