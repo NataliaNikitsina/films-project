@@ -1,9 +1,7 @@
-import {useGetUpcomingMovieQuery} from "@/pages/api/moviesApi.ts";
 import {useState} from "react";
-import {SECTION_LABELS} from "@/common/constants/constants.ts";
-import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
-import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
-import {SkeletonMovies} from "@/common/components/SkeletonMovies/SkeletonMovies.tsx";
+import {SECTION_LABELS} from "@/common/constants";
+import {useGetUpcomingMovieQuery} from "@/pages/api";
+import {MoviesList, Pagination, SkeletonMovies} from "@/common/components";
 
 export const UpcomingMovies = () => {
     const [currentPage, setCurrentPage] = useState(1)

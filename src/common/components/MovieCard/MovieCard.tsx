@@ -4,7 +4,7 @@ import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
 import {addFavoriteMovieAC, deleteFavoriteMovieAC, selectFavoriteMovies} from "@/app/app-slice.ts";
 import {useAppDispatch} from "@/common/hooks/useAppDispatch.ts";
 import s from './MovieCard.module.css'
-import noCover from '@/assets/noCover.svg'
+import noCover from '@/assets/images/noCover.svg'
 import {useGetConfigurationQuery} from "@/pages/api/moviesApi.ts";
 
 type Props = {

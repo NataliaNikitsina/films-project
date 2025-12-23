@@ -1,10 +1,11 @@
-import {POSTER_SIZES} from "@/common/constants/constants.ts";
-import type {MovieDetailsResponse} from "@/common/types";
 import s from './MovieDetail.module.css'
-import {MovieGenres} from "@/pages/MoviePage/MovieDetail/MovieGenres/MovieGenres.tsx";
-import {MovieInfo} from "@/pages/MoviePage/MovieDetail/MovieInfo/MovieInfo.tsx";
-import {useGetConfigurationQuery} from "@/pages/api/moviesApi.ts";
-import noCover from "@/assets/noCover.svg";
+import noCover from "@/assets/images/noCover.svg";
+import {useGetConfigurationQuery} from "@/pages/api";
+import type {MovieDetailsResponse} from "@/common/types";
+import {POSTER_SIZES} from "@/common/constants";
+import {MovieInfo} from "@/pages/MoviePage/MovieDetail/MovieInfo";
+import {MovieGenres} from "@/pages/MoviePage/MovieDetail/MovieGenres";
+
 
 type Props = {
     movie: MovieDetailsResponse

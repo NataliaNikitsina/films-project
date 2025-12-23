@@ -1,6 +1,6 @@
 import {useNavigate} from "react-router";
-import {PATH} from "@/common/constants/constants.ts";
 import s from './NotFoundPage.module.css'
+import {PATH} from "@/common/constants";
 
 export const NotFoundPage = () => {
     const navigate = useNavigate();

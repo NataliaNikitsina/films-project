@@ -1,11 +1,13 @@
 import s from './MoviePage.module.css'
 import {useParams} from "react-router";
-import {getSlicedArray} from "@/common/utils/getSlicedArray.ts";
-import {useGetMovieDetailQuery} from "@/pages/api/moviesApi.ts";
-import {MovieActors} from "@/pages/MoviePage/MovieActors/MovieActors.tsx";
-import {MovieDetail} from "@/pages/MoviePage/MovieDetail/MovieDetail.tsx";
-import {SimilarMovies} from "@/pages/MoviePage/SimilarMovies/SimilarMovies.tsx";
-import {SkeletonMovieDetail} from "@/common/components/SkeletonMovieDetail/SkeletonMovieDetail.tsx";
+import {useGetMovieDetailQuery} from "@/pages/api";
+import {SkeletonMovieDetail} from "@/common/components";
+import {MovieDetail} from "@/pages/MoviePage/MovieDetail";
+import {MovieActors} from "@/pages/MoviePage/MovieActors";
+import {getSlicedArray} from "@/common/utils";
+import {SimilarMovies} from "@/pages/MoviePage/SimilarMovies";
+
+
 
 
 export const MoviePage = () => {

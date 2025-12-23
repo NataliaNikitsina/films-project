@@ -1,13 +1,12 @@
 import "react-range-slider-input/dist/style.css";
-import {Filter} from "@/pages/FilteredMoviesPage/Filter/Filter.tsx";
-import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
-import {useGetFilteredMoviesQuery} from "@/pages/api/moviesApi.ts";
-import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
-import {selectFilter} from "@/pages/FilteredMoviesPage/filter-slice.ts";
 import s from './FilteredMoviesPage.module.css'
-import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
+import {useGetFilteredMoviesQuery} from "@/pages/api";
 import {useEffect, useState} from "react";
-import {SkeletonMovies} from "@/common/components/SkeletonMovies/SkeletonMovies.tsx";
+import {useAppSelector} from "@/common/hooks";
+import {Filter} from "@/pages/FilteredMoviesPage/Filter";
+import {MoviesList, Pagination, SkeletonMovies} from "@/common/components";
+import {selectFilter} from "@/pages/FilteredMoviesPage/api";
+
 
 
 export function FilteredMoviesPage() {

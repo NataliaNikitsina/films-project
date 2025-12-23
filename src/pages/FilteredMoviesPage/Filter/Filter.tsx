@@ -1,12 +1,12 @@
-import RangeSlider from "react-range-slider-input";
-import {type Sort_by} from "@/common/types/types.ts";
-import {useAppDispatch} from "@/common/hooks/useAppDispatch.ts";
-import {changeFilterAC, selectFilter} from "@/pages/FilteredMoviesPage/filter-slice.ts";
-import {type ChangeEvent, useEffect, useState} from "react";
 import s from './Filter.module.css'
-import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
-import {SORT_BY} from "@/common/constants/constants.ts";
-import {useGetGenresQuery} from "@/pages/api/moviesApi.ts";
+import {useAppDispatch, useAppSelector} from "@/common/hooks";
+import {changeFilterAC, selectFilter} from "@/pages/FilteredMoviesPage/api";
+import {type ChangeEvent, useEffect, useState} from "react";
+import {useGetGenresQuery} from "@/pages/api";
+import type {Sort_by} from "@/common/types";
+import {SORT_BY} from "@/common/constants";
+import RangeSlider from 'react-range-slider-input'
+
 
 
 export const Filter = () => {

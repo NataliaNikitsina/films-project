@@ -1,13 +1,12 @@
-import {useGetAllCategoryMoviesQuery} from "@/pages/MainPage/model/useGetAllCategoryMoviesQuery.ts";
-import {CategoryPreview} from "@/common/components/CategoryPreview/CategoryPreview.tsx";
-import {PATH, POSTER_SIZES, SECTION_LABELS} from "@/common/constants/constants.ts";
-import {getRandomNumber} from "@/common/utils/getRandomNumber.ts";
 import s from './Main.module.css'
 import {useMemo} from "react";
-import {SearchForm} from "@/common/components/SearchForm/SearchForm.tsx";
-import {SkeletonMainPage} from "@/common/components/SkeletonMainPage/SkeletonMainPage.tsx";
-import {useGetConfigurationQuery} from "@/pages/api/moviesApi.ts";
-import noCover from "@/assets/noCover.svg";
+import {PATH, POSTER_SIZES, SECTION_LABELS} from "@/common/constants";
+import {useGetAllCategoryMoviesQuery} from "@/pages/MainPage/hooks";
+import {getRandomNumber} from "@/common/utils";
+import {useGetConfigurationQuery} from "@/pages/api";
+import {CategoryPreview, SearchForm, SkeletonMainPage} from "@/common/components";
+import noCover from "@/assets/images/noCover.svg"
+
 
 const links = [
     {path: PATH.POPULAR_MOVIES, label: SECTION_LABELS.POPULAR_MOVIES},

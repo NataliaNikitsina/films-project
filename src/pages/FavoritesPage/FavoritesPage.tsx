@@ -1,7 +1,7 @@
-import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
-import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
-import {selectFavoriteMovies} from "@/app/app-slice.ts";
 import {useEffect} from "react";
+import {selectFavoriteMovies} from "@/app";
+import {useAppSelector} from "@/common/hooks";
+import {MoviesList} from "@/common/components";
 
 
 export function FavoritesPage() {

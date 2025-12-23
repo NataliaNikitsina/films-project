@@ -1,4 +1,4 @@
-import logo from '../../../../assets/logo.svg'
+import logo from '../../../../assets/images/logo.svg'
 import s from './Logo.module.css'
 import {useNavigate} from "react-router";
 import {PATH} from "@/common/constants/constants.ts";

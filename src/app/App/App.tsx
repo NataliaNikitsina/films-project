@@ -1,12 +1,10 @@
-import {Header} from "../../common/components/Header/Header.tsx";
-import {Footer} from "../../common/components/Footer/Footer.tsx";
-import {Routing} from "@/common/components/Routing/Routing.tsx";
 import s from './App.module.css'
-import {selectFavoriteMovies, selectThemeMode} from "@/app/app-slice.ts";
-import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
+import {useAppSelector} from "@/common/hooks";
+import {selectFavoriteMovies, selectThemeMode} from "@/app";
 import {useEffect} from "react";
+import {Footer, Header, Routing, ScrollToTop} from "@/common/components";
 import {ToastContainer} from "react-toastify";
-import {ScrollToTop} from "@/common/components/ScrollToTop/ScrollToTop .tsx";
+
 
 export function App() {
     const themeMode = useAppSelector(selectThemeMode)

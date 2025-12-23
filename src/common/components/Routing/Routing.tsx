@@ -1,16 +1,19 @@
+
+import {NotFoundPage} from "@/pages/NotFoundPage/NotFoundPage.tsx";
 import {Navigate, Route, Routes} from "react-router";
 import {PATH} from "@/common/constants/constants.ts";
-import {MainPage} from "@/pages/MainPage/MainPage.tsx";
-import {FilteredMoviesPage} from "@/pages/FilteredMoviesPage/FilteredMoviesPage.tsx";
-import {SearchPage} from "@/pages/SearchPage/SearchPage.tsx";
-import {FavoritesPage} from "@/pages/FavoritesPage/FavoritesPage.tsx";
-import {CategoryMoviesPage} from "@/pages/CategoryMoviesPage/CategoryMoviesPage.tsx";
-import {PopularMovies} from "@/pages/CategoryMoviesPage/PopularMovies/PopularMovies.tsx";
-import {TopRatedMovies} from "@/pages/CategoryMoviesPage/TopRatedMovies/TopRatedMovies.tsx";
-import {UpcomingMovies} from "@/pages/CategoryMoviesPage/UpcomingMovies/UpcomingMovies.tsx";
-import {NowPlayingMovies} from "@/pages/CategoryMoviesPage/NowPlayingMovies/NowPlayingMovies.tsx";
-import {MoviePage} from "@/pages/MoviePage/MoviePage.tsx";
-import {NotFoundPage} from "@/pages/NotFoundPage/NotFoundPage.tsx";
+import {MainPage} from "@/pages/MainPage";
+import {MoviePage} from "@/pages/MoviePage";
+import {
+    CategoryMoviesPage,
+    NowPlayingMovies,
+    PopularMovies,
+    TopRatedMovies,
+    UpcomingMovies
+} from "@/pages/CategoryMoviesPage";
+import {FilteredMoviesPage} from "@/pages/FilteredMoviesPage";
+import {FavoritesPage} from "@/pages/FavoritesPage";
+import {SearchPage} from "@/pages/SearchPage";
 
 
 export const Routing = () => {

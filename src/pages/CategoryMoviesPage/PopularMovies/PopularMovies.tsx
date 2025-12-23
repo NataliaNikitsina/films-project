@@ -1,9 +1,9 @@
-import {useGetPopularMovieQuery} from "@/pages/api/moviesApi.ts";
-import {Pagination} from "@/common/components/Pagination/Pagination.tsx";
 import {useState} from "react";
-import {SECTION_LABELS} from "@/common/constants/constants.ts";
-import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
-import {SkeletonMovies} from "@/common/components/SkeletonMovies/SkeletonMovies.tsx";
+import {useGetPopularMovieQuery} from "@/pages/api";
+import {MoviesList, Pagination, SkeletonMovies} from "@/common/components";
+import {SECTION_LABELS} from "@/common/constants";
+
+
 
 export const PopularMovies = () => {
     const [currentPage, setCurrentPage] = useState(1)

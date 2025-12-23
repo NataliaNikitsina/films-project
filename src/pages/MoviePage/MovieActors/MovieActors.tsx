@@ -1,8 +1,9 @@
-import {PROFILE_SIZES} from "@/common/constants/constants.ts";
-import noCover from "@/assets/noCover.svg";
-import type {Cast} from "@/common/types";
 import s from './MovieActors.module.css'
-import {useGetConfigurationQuery} from "@/pages/api/moviesApi.ts";
+import type {Cast} from "@/common/types";
+import {useGetConfigurationQuery} from "@/pages/api";
+import {PROFILE_SIZES} from "@/common/constants";
+import noCover from "@/assets/images/noCover.svg"
+
 
 type Props = {
     cast: Cast[]

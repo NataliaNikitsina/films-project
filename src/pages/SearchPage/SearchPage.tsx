@@ -1,10 +1,8 @@
-import {useSearchMoviesQuery} from "@/pages/api/moviesApi.ts";
-import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
-import {selectSearchValue} from "@/app/app-slice.ts";
-import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
-import {SearchForm} from "@/common/components/SearchForm/SearchForm.tsx";
-import {SkeletonMovies} from "@/common/components/SkeletonMovies/SkeletonMovies.tsx";
 //import s from './SearchPage.module.css'
+import {selectSearchValue} from "@/app";
+import {useAppSelector} from "@/common/hooks";
+import {useSearchMoviesQuery} from "@/pages/api";
+import {MoviesList, SearchForm, SkeletonMovies} from "@/common/components";
 
 export function SearchPage() {
     const searchValue = useAppSelector(selectSearchValue)

@@ -1,6 +1,6 @@
-import {NavBar} from "@/common/components/Header/NavBar/NavBar.tsx";
-import {PATH, SECTION_LABELS} from "@/common/constants/constants.ts";
 import {Outlet} from "react-router";
+import {PATH, SECTION_LABELS} from "@/common/constants";
+import {NavBar} from "@/common/components";
 
 
 const linksPage = [
