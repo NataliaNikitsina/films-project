@@ -6,9 +6,9 @@ export const SkeletonMovies = () => {
     return (
         <div className={s.container}>
             {Array(10).fill(null).map((_el, index) => (
-                <div key={index}>
-                    <Skeleton height={'280px'} width={'200px'} borderRadius={'10px'}/>
-                    <Skeleton height={'25px'} width={'200px'} borderRadius={'10px'}/>
+                <div key={index} className={s.card}>
+                    <Skeleton borderRadius={'10px'} className={s.poster}/>
+                    <Skeleton height={'25px'} borderRadius={'10px'}/>
                 </div>
             ))}
         </div>

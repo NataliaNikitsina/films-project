@@ -1,7 +1,7 @@
 .checkbox{
     height: 34px;
     width: 70px;
-    background: linear-gradient(to right, rgba(144, 206, 161, 0.8), rgba(1, 180, 228, 0.76));
+    background: linear-gradient(to right, var(--color-gray-200), var(--color-gray-350));
     appearance: none;
     border-radius: 34px;
     position: relative;
@@ -17,13 +17,13 @@
     top: 0;
     left: 0;
     content: "";
-    background: linear-gradient(to bottom,var(--color-gray-800),var(--color-gray-700));
+    background: linear-gradient(to bottom,var(--color-gray-700),var(--color-gray-900));
     border-radius: 34px;
     transform: scale(0.9);
     transition: 0.5s;
-    box-shadow: 0 8px 60px var(--color-gray-900),
+    box-shadow: 0 8px 60px var(--color-gray-800),
     inset 4px 4px var(--color-gray-600),
-    inset -4px 4px var(--color-gray-600);
+    inset -4px 4px var(--color-gray-700);
 }
 
 .checkbox:checked{

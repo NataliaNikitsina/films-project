@@ -3,3 +3,13 @@
     grid-template-columns: repeat(var(--movie-grid-columns, 5), minmax(0, 1fr));
     gap: 24px;
 }
+
+.card {
+    max-width: 200px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.poster {
+    aspect-ratio: 1/1.5;
+}
