@@ -24,7 +24,6 @@ export const SECTION_LABELS = {
     NOW_PLAYING_MOVIES: 'Now Playing Movies',
 } as const
 
-export const IMAGE_PATH = 'https://image.tmdb.org/t/p/'
 
 export const POSTER_SIZES = {
     // "w92",

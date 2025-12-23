@@ -1,6 +1,6 @@
 import {Navigate, Route, Routes} from "react-router";
 import {PATH} from "@/common/constants/constants.ts";
-import {Main} from "@/pages/MainPage/Main.tsx";
+import {MainPage} from "@/pages/MainPage/MainPage.tsx";
 import {FilteredMoviesPage} from "@/pages/FilteredMoviesPage/FilteredMoviesPage.tsx";
 import {SearchPage} from "@/pages/SearchPage/SearchPage.tsx";
 import {FavoritesPage} from "@/pages/FavoritesPage/FavoritesPage.tsx";
@@ -16,7 +16,7 @@ import {NotFoundPage} from "@/pages/NotFoundPage/NotFoundPage.tsx";
 export const Routing = () => {
     return (
         <Routes>
-            <Route path={PATH.MAIN_PAGE} element={<Main/>}/>
+            <Route path={PATH.MAIN_PAGE} element={<MainPage/>}/>
             <Route path={'/movies/:movieId'} element={<MoviePage/>}/>
             <Route path={PATH.CATEGORY_MOVIES_PAGE} element={<CategoryMoviesPage/>}>
                 <Route index element={<Navigate to={PATH.POPULAR_MOVIES} replace/>}/>

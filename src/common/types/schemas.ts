@@ -9,7 +9,7 @@ export const MovieSchema = z.object({
     original_title: z.string(),
     overview: z.string(),
     popularity: z.number(),
-    poster_path:  z.string().nullable(),
+    poster_path: z.string().nullable(),
     release_date: z.string(),
     title: z.string(),
     video: z.boolean(),
@@ -39,7 +39,7 @@ export const CrewSchema = z.object({
     name: z.string(),
     original_name: z.string(),
     popularity: z.number(),
-    profile_path:  z.string().nullable(),
+    profile_path: z.string().nullable(),
     credit_id: z.string(),
     department: z.string(),
     job: z.string(),
@@ -53,10 +53,10 @@ export const CastSchema = z.object({
     name: z.string(),
     original_name: z.string(),
     popularity: z.number(),
-    profile_path:  z.string().nullable(),
+    profile_path: z.string().nullable(),
     cast_id: z.number().int(),
-    character:  z.string(),
-    credit_id:  z.string(),
+    character: z.string(),
+    credit_id: z.string(),
     order: z.number().int(),
 })
 
@@ -91,7 +91,7 @@ export const MovieDetailsResponseSchema = z.object({
     adult: z.boolean(),
     backdrop_path: z.string().nullable(),
     belongs_to_collection: z.object({
-        backdrop_path:  z.string().nullable(),
+        backdrop_path: z.string().nullable(),
         id: z.number(),
         name: z.string(),
         poster_path: z.string().nullable(),
@@ -106,13 +106,13 @@ export const MovieDetailsResponseSchema = z.object({
     original_title: z.string(),
     overview: z.string(),
     popularity: z.number(),
-    poster_path:  z.string().nullable(),
-    production_companies:z.array(ProdactionCompaniesSchema),
-    production_countries:z.array(ProdactionCountriesSchema),
+    poster_path: z.string().nullable(),
+    production_companies: z.array(ProdactionCompaniesSchema),
+    production_countries: z.array(ProdactionCountriesSchema),
     release_date: z.string(),
     revenue: z.number(),
     runtime: z.number(),
-    spoken_languages:z.array(SpokenLanguageSchema),
+    spoken_languages: z.array(SpokenLanguageSchema),
     status: z.string(),
     tagline: z.string(),
     title: z.string(),
@@ -125,5 +125,18 @@ export const MovieDetailsResponseSchema = z.object({
         crew: z.array(CrewSchema),
     }),
     similar: MoviesResponseSchema
+})
+
+export const ConfigurationSchema = z.object({
+    change_keys: z.array(z.string()),
+    images: z.object({
+        base_url: z.string(),
+        secure_base_url: z.string(),
+        backdrop_sizes: z.array(z.string()),
+        logo_sizes: z.array(z.string()),
+        poster_sizes: z.array(z.string()),
+        profile_sizes: z.array(z.string()),
+        still_sizes: z.array(z.string()),
+    })
 })
 

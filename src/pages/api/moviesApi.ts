@@ -1,5 +1,6 @@
 import {baseApi} from "@/app/baseApi.ts"
 import {
+    ConfigurationSchema,
     type GenresResponse,
     GenresResponseSchema,
     MovieDetailsResponseSchema,
@@ -12,7 +13,12 @@ import {withZodCatch} from "@/common/utils/withZodCatch.ts";
 
 
 export const moviesApi = baseApi.injectEndpoints({
-    endpoints: (builder) => ({
+    endpoints: (builder) =>({
+        getConfiguration: builder.query({
+            query: (_ :void) => "/configuration",
+            ...withZodCatch(ConfigurationSchema),
+        }),
+
         getPopularMovie: builder.query({
             query: (page: { page: number }) => ({
                 url: "/movie/popular",
@@ -79,6 +85,7 @@ export const moviesApi = baseApi.injectEndpoints({
 })
 
 export const {
+    useGetConfigurationQuery,
     useGetPopularMovieQuery,
     useGetTopRatedMovieQuery,
     useGetUpcomingMovieQuery,

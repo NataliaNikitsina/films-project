@@ -1,13 +1,17 @@
-import {IMAGE_PATH, PROFILE_SIZES} from "@/common/constants/constants.ts";
+import {PROFILE_SIZES} from "@/common/constants/constants.ts";
 import noCover from "@/assets/noCover.svg";
 import type {Cast} from "@/common/types";
 import s from './MovieActors.module.css'
+import {useGetConfigurationQuery} from "@/pages/api/moviesApi.ts";
 
 type Props = {
     cast: Cast[]
 }
 
 export const MovieActors = ({cast}: Props) => {
+    const {data} = useGetConfigurationQuery()
+    const baseImageUrl = data?.images.secure_base_url
+    const imageSize = data?.images.poster_sizes.includes(PROFILE_SIZES.CARD) ? PROFILE_SIZES.CARD : ''
     return (
         <div className={s.container}>
             <h2>Cast</h2>
@@ -15,7 +19,7 @@ export const MovieActors = ({cast}: Props) => {
                 {cast.map(el => (
                     <div className={s.actor}>
                         <div className={s.photo}>
-                            <img src={el.profile_path ? IMAGE_PATH + PROFILE_SIZES.CARD + el.profile_path : noCover}
+                            <img src={el.profile_path && baseImageUrl && imageSize ? baseImageUrl + imageSize + el.profile_path : noCover}
                                  alt="avatar1"/>
                         </div>
                         <div className={s.info}>
