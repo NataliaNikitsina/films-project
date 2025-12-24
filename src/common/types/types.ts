@@ -1,8 +1,7 @@
 import * as z from "zod";
 import {
     CastSchema, GenreSchema, GenresResponseSchema,
-    MovieDetailsResponseSchema,
-    type MovieSchema,
+    MovieDetailsResponseSchema, MovieSchema,
     MoviesResponseSchema, MoviesResponseWithDatePeriodSchema
 } from "@/common/types/schemas.ts";
 import {SORT_BY} from "@/common/constants/constants.ts";
@@ -32,6 +31,12 @@ export type  QueryParams = {
     'vote_average.gte'?: number
     with_genres?: string,
     page?: number
+}
+
+export type Filter= {
+    sort?: Sort_by,
+    rating?: [number, number],
+    genres?: string,
 }
 
 export type Sort_by = (typeof SORT_BY)[keyof typeof SORT_BY]

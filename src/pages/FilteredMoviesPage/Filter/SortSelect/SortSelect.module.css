@@ -1,0 +1,16 @@
+.sortLabel {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sortSelect {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px 0;
+    border-radius: 8px;
+    border: 1px solid var(--color-control-border);
+    font-size: var(--font-size-s);
+    background-color: var(--color-control-background);
+    transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
+}

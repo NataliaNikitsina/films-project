@@ -11,72 +11,12 @@
     font-size: var(--font-size-m);
 }
 
-.sortLabel {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
-}
-
-.sortSelect {
-    flex: 1;
-    min-width: 200px;
-    padding: 10px 0;
-    border-radius: 8px;
-    border: 1px solid var(--color-control-border);
-    font-size: var(--font-size-s);
-    background-color: var(--color-control-background);
-    transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease, color .2s ease;
-}
-
-.ratingWrapper {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.ratingInfo {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-}
-
-.genresWrapper {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-.genreButton {
-    background-color: var(--color-control-background);
-    font-size: var(--font-size-s);
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s, box-shadow 0.2s;
-    padding: 5px 10px;
-    border-radius: 999px;
-    cursor: pointer;
-    border: 1px solid var(--color-control-border);
-}
-
-.genreButton:hover {
-    box-shadow: 0 0 0 2px rgb(var(--color-blue-600-rgb) / .1);
-    border-color: var(--color-indigo-400);
-}
-
-.active {
-    background-color: #2196f3;
-    color: var(--color-white);
-    border: 2px solid var(--color-gray-900);
-}
-
-.active:hover {
-    background-color: var(--color-gray-100);
-}
-
 .reset {
     align-self: center;
     padding: 8px 12px;
     background-color: var(--color-gray-500);
     border-color: transparent;
     color: var(--color-white);
-    margin: 10px 0;
+    border-radius: 999px;
+    cursor: pointer;
 }

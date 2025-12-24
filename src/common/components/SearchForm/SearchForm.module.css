@@ -19,20 +19,24 @@
     cursor: pointer;
 }
 
+.search::placeholder {
+    color: var(--color-body-text);
+}
+
 .search:focus-visible {
-    outline: 3px solid var(--color-blue-600);
+    outline: 3px solid var(--color-indigo-500);
     outline-offset: 2px;
 }
 
 .btnSearch {
-    background-color: var(--color-blue-600);
+    background-color: var(--color-indigo-500);
     color: var(--color-white);
     padding: 8px 16px;
     font-size: var(--font-size-m);
     border-radius: 999px;
     cursor: pointer;
     transition: background-color .2s ease, color .2s ease, border-color .2s ease, opacity .2s ease;
-    border: 1px solid transparent;
+    border: 1px solid var(--color-control-border);
 }
 
 .btnSearch:disabled {

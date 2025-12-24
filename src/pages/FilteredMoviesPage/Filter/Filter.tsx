@@ -1,94 +1,30 @@
 import s from './Filter.module.css'
-import {useAppDispatch, useAppSelector} from "@/common/hooks";
-import {changeFilterAC, selectFilter} from "@/pages/FilteredMoviesPage/api";
-import {type ChangeEvent, useEffect, useState} from "react";
-import {useGetGenresQuery} from "@/pages/api";
-import type {Sort_by} from "@/common/types";
+import {useAppDispatch} from "@/common/hooks";
+import {changeFilterAC} from "@/pages/FilteredMoviesPage/api";
 import {SORT_BY} from "@/common/constants";
-import RangeSlider from 'react-range-slider-input'
+import 'react-range-slider-input/dist/style.css';
+import {SortSelect} from "@/pages/FilteredMoviesPage/Filter/SortSelect/SortSelect.tsx";
+import {RatingSlider} from "@/pages/FilteredMoviesPage/Filter/RatingSlider";
+import {GenresList} from "@/pages/FilteredMoviesPage/Filter/GenresList";
 
 
 export const Filter = () => {
-    const filter = useAppSelector(selectFilter)
-    const [value, setValue] = useState<[number, number]>([0, 10]);
-    const [debounced, setDebounced] = useState<[number, number]>([0, 10])
-
     const dispatch = useAppDispatch();
-
-    const {data: genres} = useGetGenresQuery()
-
-    useEffect(() => {
-        const handler = setTimeout(() => setDebounced(value), 200)
-        return () => clearTimeout(handler)
-    }, [value])
-
-    useEffect(() => {
-        dispatch(changeFilterAC({
-            'vote_average.gte': debounced[0],
-            'vote_average.lte': debounced[1]
-        }))
-    }, [debounced, dispatch])
-
-
-    const handleSelectFilter = (e: ChangeEvent<HTMLSelectElement>) => {
-        dispatch(changeFilterAC({
-            sort_by: e.currentTarget.value as Sort_by,
-        }))
-    }
-
-    const handleGenresFilter = (genreId: number) => {
-        const genreIdString = genreId.toString();
-        const genresArr = filter.with_genres.split(',')
-        if (genresArr.includes(genreIdString)) {
-            const filteredGenres = genresArr.filter(el => el !== genreIdString)
-            dispatch(changeFilterAC({
-                with_genres: filteredGenres.join(',')
-            }))
-            return
-        }
-        dispatch(changeFilterAC({
-            with_genres: genreIdString + ',' + filter.with_genres,
-        }))
-    }
-
     const handleResetFilter = () => {
         dispatch(changeFilterAC({
-            sort_by: SORT_BY.POPULARITY_DESC,
-            'vote_average.gte': 0,
-            'vote_average.lte': 10,
-            with_genres: '',
+            sort: SORT_BY.POPULARITY_DESC,
+            rating: [0, 10],
+            genres: '',
         }))
-        setValue([0, 10])
     }
 
     return (
         <aside className={s.filter}>
             <h2>Filters/Sort</h2>
-            <label className={s.sortLabel}>Sort By:
-                <select className={s.sortSelect} value={filter.sort_by} onChange={handleSelectFilter}>
-                    <option value={SORT_BY.POPULARITY_DESC}>Popularity ↓</option>
-                    <option value={SORT_BY.POPULARITY_ASC}>Popularity ↑</option>
-                    <option value={SORT_BY.RATING_DESC}>Rating ↓</option>
-                    <option value={SORT_BY.RATING_ASC}>Rating ↑</option>
-                    <option value={SORT_BY.RELEASE_DATE_DESC}>Release date ↓</option>
-                    <option value={SORT_BY.RELEASE_DATE_ASC}>Release date ↑</option>
-                    <option value={SORT_BY.TITLE_DESC}>Title A-Z</option>
-                    <option value={SORT_BY.TITLE_ASC}>Title Z-A</option>
-                </select>
-            </label>
-            <div className={s.ratingWrapper}>
-                <div className={s.ratingInfo}>
-                    <span>Rating</span>
-                    <span>{`${debounced[0]} - ${debounced[1]}`}</span>
-                </div>
-                <RangeSlider min={0} max={10} step={0.1} value={value} onInput={setValue}/>
-            </div>
-            <div className={s.genresWrapper}>
-                {genres?.genres.map((genre) => (<button
-                    className={filter.with_genres.includes(genre.id.toString()) ? `${s.genreButton} ${s.active}` : s.genreButton}
-                    key={genre.id} onClick={() => handleGenresFilter(genre.id)}>{genre.name}</button>))}
-            </div>
-            <button className={`${s.genreButton} ${s.reset}`} onClick={handleResetFilter}>Reset filters</button>
+            <SortSelect/>
+            <RatingSlider/>
+            <GenresList/>
+            <button className={s.reset} onClick={handleResetFilter}>Reset filters</button>
         </aside>
     )
 

@@ -12,7 +12,13 @@ import {SECTION_LABELS} from "@/common/constants";
 export function FilteredMoviesPage() {
     const [currentPage, setCurrentPage] = useState(1)
     const filter = useAppSelector(selectFilter)
-    const {data, currentData, isLoading} = useGetFilteredMoviesQuery({page: currentPage, ...filter})
+    const {data, currentData, isLoading} = useGetFilteredMoviesQuery({
+        page: currentPage,
+        sort_by: filter.sort,
+        "vote_average.gte": filter.rating ? filter.rating[0] : undefined,
+        "vote_average.lte": filter.rating ? filter.rating[1] : undefined,
+        with_genres: filter.genres
+    })
 
     useEffect(() => {
         if (currentData) window.scrollTo(0, 0);
