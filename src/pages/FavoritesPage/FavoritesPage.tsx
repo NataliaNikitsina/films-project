@@ -15,7 +15,7 @@ export function FavoritesPage() {
 
     return (
         <section className={s.container}>
-            <h1>{SECTION_LABELS.FAVORITES_MOVIES_PAGE}</h1>
+            <h2>{SECTION_LABELS.FAVORITES_MOVIES_PAGE}</h2>
             <MoviesList movies={favoritesMovies}/>
         </section>
     )

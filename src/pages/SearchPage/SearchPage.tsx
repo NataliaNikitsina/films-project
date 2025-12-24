@@ -10,12 +10,12 @@ export function SearchPage() {
 
     return (
         <section>
-            <h1>Search Results</h1>
+            <h2>Search Results</h2>
             <SearchForm/>
-            {!data && <p>Enter a movie title to start searching...</p>}
             {isLoading && <SkeletonMovies/>}
+            {!searchValue && <p>Enter a movie title to start searching...</p>}
             {data?.results.length === 0 && <p>No matches found for {`"${searchValue}"`}</p>}
-            {data && <MoviesList movies={data ? data.results : []} />}
+            {data && searchValue && <MoviesList movies={data ? data.results : []} />}
         </section>
     )
 }

@@ -8,7 +8,7 @@ import {GenresList} from "@/pages/FilteredMoviesPage/Filter/GenresList";
 export const Filter = () => {
     return (
         <aside className={s.filter}>
-            <h2>Filters/Sort</h2>
+            <h3>Filters/Sort</h3>
             <SortSelect/>
             <GenresList/>
             <RatingSliderWithResetButton/>

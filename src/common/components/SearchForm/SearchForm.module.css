@@ -20,7 +20,7 @@
 }
 
 .search::placeholder {
-    color: var(--color-body-text);
+    color: var(--color-main-text);
 }
 
 .search:focus-visible {

@@ -37,7 +37,8 @@
 
     border-radius: 50%;
     font-size: var(--font-size-xs);
-    font-weight: 700;
+    font-weight: 500;
+    color: #111827;
 
     max-width: 35px;
     width: 100%;

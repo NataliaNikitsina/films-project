@@ -28,7 +28,7 @@ export function FilteredMoviesPage() {
         <section className={s.filteredMoviesPage}>
             <Filter/>
             <div className={s.moviesWrapper}>
-                <h1>{SECTION_LABELS.FILTERED_MOVIES_PAGE}</h1>
+                <h2>{SECTION_LABELS.FILTERED_MOVIES_PAGE}</h2>
                 {isLoading && <SkeletonMovies/>}
                 {data && <MoviesList movies={data.results}/>}
                 {data && <Pagination

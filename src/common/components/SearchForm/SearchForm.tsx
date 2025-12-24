@@ -19,14 +19,17 @@ export const SearchForm = () => {
         navigate(PATH.SEARCH_PAGE)
     }
 
-    const handleOnChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+        if(e.currentTarget.value.trim().length === 0){
+            dispatch(setSearchValueAC({searchValue: ''}))
+        }
         setValue(e.currentTarget.value)
     }
 
     return (
         <form className={s.formSearch} onSubmit={handleSearch}>
             <input value={value} className={s.search} type={'search'} placeholder={'Search...'}
-                   onChange={handleOnChange}/>
+                   onChange={handleChange}/>
             <button className={s.btnSearch} disabled={value.trim().length === 0}>Search</button>
         </form>
     )

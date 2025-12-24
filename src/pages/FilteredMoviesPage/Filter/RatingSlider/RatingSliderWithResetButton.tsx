@@ -39,7 +39,7 @@ export const RatingSliderWithResetButton = () => {
     return (
         <div className={s.ratingWrapper}>
             <div className={s.ratingInfo}>
-                <span>Rating</span>
+                <h4>Rating</h4>
                 <span>{`${filter.rating![0]} - ${filter.rating![1]}`}</span>
             </div>
             <RangeSlider min={0} max={10} step={0.1} value={value} onInput={setValue} id="range-slider"/>

@@ -17,13 +17,10 @@
     top: 0;
     left: 0;
     content: "";
-    background: linear-gradient(to bottom,var(--color-gray-700),var(--color-gray-900));
+    background: linear-gradient(to left,var(--color-gray-500),var(--color-gray-700));
     border-radius: 34px;
     transform: scale(0.9);
     transition: 0.5s;
-    box-shadow: 0 8px 60px var(--color-gray-800),
-    inset 4px 4px var(--color-gray-600),
-    inset -4px 4px var(--color-gray-700);
 }
 
 .checkbox:checked{
@@ -33,8 +30,5 @@
 
 .checkbox:checked::before{
     left: 34px;
-    box-shadow: 0 8px 60px var(--tmdb-sky),
-    inset 4px 4px var(--tmdb-sky),
-    inset -4px 4px var(--tmdb-sky);
     background: linear-gradient(to right,var(--tmdb-sky),var(--tmdb-green));
 }
