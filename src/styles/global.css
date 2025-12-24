@@ -1,36 +1,37 @@
 :root {
-  font-family: Rubik, sans-serif;
-  font-weight: 400;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 100%;
-  text-rendering: optimizelegibility;
-  scroll-behavior: smooth;
-  font-synthesis: none;
+    font-family: Rubik, sans-serif;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    line-height: 100%;
+    text-rendering: optimizelegibility;
+    scroll-behavior: smooth;
+    font-synthesis: none;
 }
 
 body {
-  margin: 0;
-  color: var(--color-body-text);
-  background-color: var(--color-page-background);
-  min-width: 320px;
-  min-height: 100vh;
+    margin: 0;
+    color: var(--color-body-text);
+    background-color: var(--color-page-background);
+    min-width: 320px;
+    min-height: 100vh;
 }
 
-h1{
-  font-size: 48px;
-  font-weight: 700;
+h1 {
+    font-size: 48px;
+    font-weight: 700;
 }
 
-h2{
-  font-size: var(--font-size-xl);
-  font-weight: 700;
+h2 {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
 }
 
 h4 {
-  font-size: var(--font-size-m);
-  font-weight: 500;
+    font-size: var(--font-size-m);
+    font-weight: 500;
 }
+
 
 
 

@@ -1,6 +1,6 @@
-import {MovieCard} from "@/common/components/MovieCard/MovieCard.tsx";
-import type {Movie} from "@/common/types/types.ts";
 import s from './MoviesList.module.css'
+import {MovieCard} from "@/common/components";
+import type {Movie} from "@/common/types";
 
 type Props = {
     movies: Movie[]

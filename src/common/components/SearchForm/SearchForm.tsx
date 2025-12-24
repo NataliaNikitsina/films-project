@@ -1,10 +1,10 @@
 import s from './SearchForm.module.css'
+import {useAppDispatch, useAppSelector} from "@/common/hooks";
+import {selectSearchValue, setSearchValueAC} from "@/app";
 import {type ChangeEvent, type FormEvent, useState} from "react";
-import {selectSearchValue, setSearchValueAC} from "@/app/app-slice.ts";
-import {PATH} from "@/common/constants/constants.ts";
 import {useNavigate} from "react-router";
-import {useAppDispatch} from "@/common/hooks/useAppDispatch.ts";
-import {useAppSelector} from "@/common/hooks/useAppSelector.ts";
+import {PATH} from "@/common/constants";
+
 
 export const SearchForm = () => {
     const searchValue = useAppSelector(selectSearchValue)

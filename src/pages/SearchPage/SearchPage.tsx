@@ -1,4 +1,4 @@
-//import s from './SearchPage.module.css'
+import "./SearchPage.module.css"
 import {selectSearchValue} from "@/app";
 import {useAppSelector} from "@/common/hooks";
 import {useSearchMoviesQuery} from "@/pages/api";
@@ -10,7 +10,7 @@ export function SearchPage() {
 
     return (
         <section>
-            <h2>Search Results</h2>
+            <h1>Search Results</h1>
             <SearchForm/>
             {!data && <p>Enter a movie title to start searching...</p>}
             {isLoading && <SkeletonMovies/>}

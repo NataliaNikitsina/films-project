@@ -1,10 +1,8 @@
-import {NavBar} from "@/common/components/Header/NavBar/NavBar.tsx";
-import {Logo} from "@/common/components/Header/Logo/Logo.tsx";
-import {ThemeToggle} from "@/common/components/Header/ThemeToggle/ThemeToggle.tsx";
 import s from './Header.module.css'
-import {PATH, SECTION_LABELS} from "@/common/constants/constants.ts";
-import {LinearProgress} from "@/common/components/LinearProgress/LinearProgress.tsx";
-import {useGlobalLoading} from "@/common/hooks/useGlobalLoading.ts";
+import {PATH, SECTION_LABELS} from "@/common/constants";
+import {useGlobalLoading} from "@/common/hooks";
+import {LinearProgress, Logo, NavBar, ThemeToggle} from "@/common/components";
+
 
 const headerLinks = [
     {path: PATH.MAIN_PAGE, label: SECTION_LABELS.MAIN_PAGE},

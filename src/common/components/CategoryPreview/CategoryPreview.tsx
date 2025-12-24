@@ -1,8 +1,8 @@
-import type {Movie} from "@/common/types/types.ts";
-import {NavLink} from "react-router";
-import {MoviesList} from "@/common/components/MoviesList/MoviesList.tsx";
-import {PATH} from "@/common/constants/constants.ts";
 import s from './CategoryPreview.module.css'
+import {NavLink} from "react-router";
+import type {Movie} from "@/common/types";
+import {MoviesList} from "@/common/components";
+import {PATH} from "@/common/constants";
 
 type Props = {
     title: string
