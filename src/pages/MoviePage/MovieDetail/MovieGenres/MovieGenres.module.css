@@ -16,9 +16,4 @@
     border-radius: 999px;
     background-color: var(--color-gray-200);
     font-size: var(--font-size-s);
-    cursor: pointer;
-}
-
-.genreItem:hover {
-    background: var(--color-gray-100);
 }

@@ -1,12 +1,14 @@
-import s from "./RatingSlider.module.css";
+import s from "./RatingSliderWithResetButton.module.css";
+import './rangeSlider.css'
 import {useEffect, useState} from "react";
 import {changeFilterAC, selectFilter} from "@/pages/FilteredMoviesPage/api";
 import {useAppDispatch, useAppSelector} from "@/common/hooks";
 import RangeSlider from 'react-range-slider-input';
 import 'react-range-slider-input/dist/style.css';
+import {SORT_BY} from "@/common/constants";
 
 
-export const RatingSlider = () => {
+export const RatingSliderWithResetButton = () => {
     const filter = useAppSelector(selectFilter)
     const dispatch = useAppDispatch();
 
@@ -24,9 +26,14 @@ export const RatingSlider = () => {
         }))
     }, [debounced, dispatch])
 
-    useEffect(() => {
-        setValue(filter.rating!)
-    }, [filter])
+    const handleResetFilter = () => {
+        dispatch(changeFilterAC({
+            sort: SORT_BY.POPULARITY_DESC,
+            rating: [0, 10],
+            genres: '',
+        }))
+        setValue([0, 10])
+    }
 
 
     return (
@@ -35,7 +42,8 @@ export const RatingSlider = () => {
                 <span>Rating</span>
                 <span>{`${filter.rating![0]} - ${filter.rating![1]}`}</span>
             </div>
-            <RangeSlider min={0} max={10} step={0.1} value={value} onInput={setValue}/>
+            <RangeSlider min={0} max={10} step={0.1} value={value} onInput={setValue} id="range-slider"/>
+            <button className={s.reset} onClick={handleResetFilter}>Reset filters</button>
         </div>
     )
 }

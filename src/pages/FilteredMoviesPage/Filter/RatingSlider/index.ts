@@ -1,1 +1,1 @@
-export {RatingSlider} from './RatingSlider.tsx'
+export {RatingSliderWithResetButton} from './RatingSliderWithResetButton.tsx'

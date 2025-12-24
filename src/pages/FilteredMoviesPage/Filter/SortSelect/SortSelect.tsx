@@ -16,7 +16,7 @@ export const SortSelect = () => {
     }
 
     return (
-        <label className={s.sortLabel}>Sort By:
+        <label className={s.sortLabel}>Sort By
             <select className={s.sortSelect} value={filter.sort} onChange={handleSelectFilter}>
                 <option value={SORT_BY.POPULARITY_DESC}>Popularity ↓</option>
                 <option value={SORT_BY.POPULARITY_ASC}>Popularity ↑</option>

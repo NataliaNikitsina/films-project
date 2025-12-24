@@ -1,0 +1,25 @@
+.ratingWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ratingInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+}
+
+.reset {
+    align-self: center;
+    margin-top: 12px;
+    padding: 8px 12px;
+    background-color: var(--color-gray-500);
+    border-color: transparent;
+    color: var(--color-white);
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+

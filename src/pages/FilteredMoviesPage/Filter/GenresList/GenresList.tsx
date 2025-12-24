@@ -25,10 +25,13 @@ export const GenresList = () => {
     }
 
     return (
-        <div className={s.genresWrapper}>
-            {genres?.genres.map((genre) => (<button
-                className={filter.genres?.includes(genre.id.toString()) ? `${s.genreButton} ${s.active}` : s.genreButton}
-                key={genre.id} onClick={() => handleGenresFilter(genre.id)}>{genre.name}</button>))}
+        <div className={s.container}>
+            <span>Genres</span>
+            <div className={s.genresWrapper}>
+                {genres?.genres.map((genre) => (<button
+                    className={filter.genres?.includes(genre.id.toString()) ? `${s.genreButton} ${s.active}` : s.genreButton}
+                    key={genre.id} onClick={() => handleGenresFilter(genre.id)}>{genre.name}</button>))}
+            </div>
         </div>
     )
 }
