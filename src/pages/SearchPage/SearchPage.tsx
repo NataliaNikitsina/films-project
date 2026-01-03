@@ -29,7 +29,6 @@ export function SearchPage() {
                       pagesCount={data.total_pages || 1}
               />
             </>}
-
           </section>
   )
 }

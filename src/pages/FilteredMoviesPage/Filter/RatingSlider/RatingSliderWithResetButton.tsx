@@ -12,8 +12,8 @@ export const RatingSliderWithResetButton = () => {
   const filter = useAppSelector(selectFilter)
   const dispatch = useAppDispatch();
 
-  const [value, setValue] = useState<[number, number]>([0, 10]);
-  const [debounced, setDebounced] = useState<[number, number]>([0, 10])
+  const [value, setValue] = useState<[number, number]>(filter.rating!);
+  const [debounced, setDebounced] = useState<[number, number]>(filter.rating!)
 
   useEffect(() => {
     const handler = setTimeout(() => setDebounced(value), 200)
@@ -38,7 +38,7 @@ export const RatingSliderWithResetButton = () => {
           <div className={s.container}>
             <div className={s.rating}>
               <h4>Rating</h4>
-              <span>{`${filter.rating![0]} - ${filter.rating![1]}`}</span>
+              <span>{`${value[0]} - ${value[1]}`}</span>
             </div>
             <RangeSlider min={0} max={10} step={0.1} value={value} onInput={setValue} id="range-slider"/>
             <button className={s.reset} onClick={handleResetFilter}>Reset filters</button>

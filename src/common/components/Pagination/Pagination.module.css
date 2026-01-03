@@ -7,20 +7,22 @@
 
 .pageButton {
     padding: 4px 10px;
-    background: white;
+    background: var(--color-control-background);
     border: 1px solid #aaa;
     border-radius: 4px;
     cursor: pointer;
+    color: var(--color-main-text);
 }
 
 .pageButtonActive {
-    background: #ececec;
     cursor: default;
+    background: var(--color-gray-600);
+    color: var(--color-page-background)
 }
 
 .ellipsis {
     padding: 4px 10px;
-    color: #888;
+    color: var(--color-main-text);
     user-select: none;
 }
 

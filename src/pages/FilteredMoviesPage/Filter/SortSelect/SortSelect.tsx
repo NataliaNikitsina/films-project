@@ -27,7 +27,7 @@ export const SortSelect = () => {
   return (
           <label className={s.container}>Sort By
             <select className={s.select} value={filter.sort} onChange={handleSelectFilter}>
-              {options.map((option) => (<option value={option.value}>{option.label}</option>))}
+              {options.map((option, index) => (<option key={index} value={option.value}>{option.label}</option>))}
             </select>
           </label>
   )

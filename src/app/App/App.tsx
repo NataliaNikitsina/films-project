@@ -1,9 +1,9 @@
 import s from './App.module.css'
-import {useAppSelector} from "@/common/hooks";
-import {selectFavoriteMovies, selectThemeMode} from "@/app/model";
-import {useEffect} from "react";
-import {Footer, Header, Routing, ScrollToTop} from "@/common/components";
-import {ToastContainer} from "react-toastify";
+import { useAppSelector } from "@/common/hooks";
+import { selectFavoriteMovies, selectThemeMode } from "@/app/model";
+import { useEffect } from "react";
+import { Footer, Header, Routing } from "@/common/components";
+import { ToastContainer } from "react-toastify";
 
 
 export function App() {
@@ -31,7 +31,6 @@ export function App() {
 
   return (
     <div className={s.app}>
-        <ScrollToTop/>
         <Header />
         <div className={s.container}>
             <Routing/>
