@@ -1,11 +1,11 @@
 :root {
-  --font-size-xs: 14px;
-  --font-size-s: 16px;
-  --font-size-m: 18px;
-  --font-size-l: 20px;
-  --font-size-xl: 24px;
-  --font-size-xxl: 30px;
-  --font-size-xxxl: 48px;
+  --font-size-xs: calc((100vw - 320px)/(1200 - 320) * (14 - 6) + 6px);
+  --font-size-s: calc((100vw - 320px)/(1200 - 320) * (16 - 8) + 8px);
+  --font-size-m: calc((100vw - 320px)/(1200 - 320) * (18 - 10) + 10px);;
+  --font-size-l: calc((100vw - 320px)/(1200 - 320) * (20 - 12) + 12px);
+  --font-size-xl: calc((100vw - 320px)/(1200 - 320) * (24 - 14) + 14px);
+  --font-size-xxl: calc((100vw - 320px)/(1200 - 320) * (30 - 16) + 16px);
+  --font-size-xxxl: calc((100vw - 320px)/(1200 - 320) * (48 - 20) + 20px);
 
   --item-gap: 24px;
 
