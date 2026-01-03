@@ -1,4 +1,4 @@
-import {baseApi} from "@/app/baseApi.ts"
+import {baseApi} from "@/app/model/base-api.ts"
 import {
     ConfigurationSchema,
     type GenresResponse,
@@ -6,7 +6,7 @@ import {
     MovieDetailsResponseSchema,
     MoviesResponseSchema,
     MoviesResponseWithDatePeriodSchema,
-    type QueryParams,
+    type FilterQueryParams,
     type SearchParams
 } from "@/common/types";
 import {withZodCatch} from "@/common/utils/withZodCatch.ts";
@@ -60,7 +60,7 @@ export const moviesApi = baseApi.injectEndpoints({
         }),
 
         getFilteredMovies: builder.query({
-            query: (params: QueryParams) => ({
+            query: (params: FilterQueryParams) => ({
                 url: "/discover/movie",
                 params
             }),

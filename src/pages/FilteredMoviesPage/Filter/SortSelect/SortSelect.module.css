@@ -1,10 +1,10 @@
-.sortLabel {
+.container {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.sortSelect {
+.select {
     flex: 1;
     min-width: 200px;
     padding: 10px 0;

@@ -12,7 +12,6 @@ export const baseApi = createApi({
         },
     })(args, api, extraOptions)
         if(res.error){
-            console.log(res)
             handleErrors(res.error)
         }
         return res

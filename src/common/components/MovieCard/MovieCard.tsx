@@ -1,10 +1,9 @@
 import s from './MovieCard.module.css'
 import noCover from '@/assets/images/noCover.svg'
 import type {Movie} from "@/common/types";
-import {useGetConfigurationQuery} from "@/pages/api";
 import {useAppDispatch, useAppSelector} from "@/common/hooks";
-import {addFavoriteMovieAC, deleteFavoriteMovieAC, selectFavoriteMovies} from "@/app";
-import {POSTER_SIZES} from "@/common/constants";
+import { addFavoriteMovie, deleteFavoriteMovie, selectFavoriteMovies, useGetConfigurationQuery } from "@/app/model";
+import {IMAGE_SIZES} from "@/common/constants";
 import {NavLink} from "react-router";
 
 
@@ -19,7 +18,7 @@ export const MovieCard = ({movie}: Props) => {
     const dispatch = useAppDispatch();
 
     const baseImageUrl = data?.images.secure_base_url
-    const imageSize = data?.images.poster_sizes.includes(POSTER_SIZES.CARD) ? POSTER_SIZES.CARD : ''
+    const imageSize = data?.images.poster_sizes.includes(IMAGE_SIZES.CARD) ? IMAGE_SIZES.CARD : ''
 
     let imagePath
 
@@ -30,10 +29,10 @@ export const MovieCard = ({movie}: Props) => {
 
     const handleFavorites = () => {
         if (favoritesMovies.includes(movie)) {
-            dispatch(deleteFavoriteMovieAC({movieId: movie.id}))
+            dispatch(deleteFavoriteMovie({movieId: movie.id}))
         }
         if (!favoritesMovies.includes(movie)) {
-            dispatch(addFavoriteMovieAC({movie}))
+            dispatch(addFavoriteMovie({movie}))
         }
     }
 

@@ -1,5 +1,5 @@
 import {useEffect} from "react";
-import {selectFavoriteMovies} from "@/app";
+import {selectFavoriteMovies} from "@/app/model";
 import {useAppSelector} from "@/common/hooks";
 import {MoviesList} from "@/common/components";
 import {SECTION_LABELS} from "@/common/constants";

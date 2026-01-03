@@ -4,16 +4,14 @@ import {Navigate, Route, Routes} from "react-router";
 import {PATH} from "@/common/constants/constants.ts";
 import {MainPage} from "@/pages/MainPage";
 import {MoviePage} from "@/pages/MoviePage";
-import {
-    CategoryMoviesPage,
-    NowPlayingMovies,
-    PopularMovies,
-    TopRatedMovies,
-    UpcomingMovies
-} from "@/pages/CategoryMoviesPage";
 import {FilteredMoviesPage} from "@/pages/FilteredMoviesPage";
 import {FavoritesPage} from "@/pages/FavoritesPage";
 import {SearchPage} from "@/pages/SearchPage";
+import { CategoryMoviesPage } from "@/pages/CategoryMoviesPage";
+import { PopularMovies } from "@/pages/CategoryMoviesPage/PopularMovies";
+import { TopRatedMovies } from "@/pages/CategoryMoviesPage/TopRatedMovies";
+import { UpcomingMovies } from "@/pages/CategoryMoviesPage/UpcomingMovies";
+import { NowPlayingMovies } from "@/pages/CategoryMoviesPage/NowPlayingMovies";
 
 
 export const Routing = () => {

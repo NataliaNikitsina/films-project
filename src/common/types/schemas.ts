@@ -66,14 +66,14 @@ const SpokenLanguageSchema = z.object({
     name: z.string(),
 })
 
-const ProdactionCompaniesSchema = z.object({
+const ProductionCompaniesSchema = z.object({
     id: z.number().int(),
     logo_path: z.string().nullable(),
     name: z.string(),
     origin_country: z.string(),
 })
 
-const ProdactionCountriesSchema = z.object({
+const ProductionCountriesSchema = z.object({
     name: z.string(),
     iso_3166_1: z.string(),
 })
@@ -107,8 +107,8 @@ export const MovieDetailsResponseSchema = z.object({
     overview: z.string(),
     popularity: z.number(),
     poster_path: z.string().nullable(),
-    production_companies: z.array(ProdactionCompaniesSchema),
-    production_countries: z.array(ProdactionCountriesSchema),
+    production_companies: z.array(ProductionCompaniesSchema),
+    production_countries: z.array(ProductionCountriesSchema),
     release_date: z.string(),
     revenue: z.number(),
     runtime: z.number(),

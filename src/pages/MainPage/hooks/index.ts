@@ -1,1 +1,1 @@
-export * from './useGetAllCategoryMoviesQuery.ts'
+export * from './useAllCategoryMoviesQuery.ts'

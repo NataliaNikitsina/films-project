@@ -1,32 +1,34 @@
 import s from "./SortSelect.module.css";
-import {SORT_BY} from "@/common/constants";
-import {useAppDispatch, useAppSelector} from "@/common/hooks";
-import {changeFilterAC, selectFilter} from "@/pages/FilteredMoviesPage/api";
-import type {ChangeEvent} from "react";
-import type {Sort_by} from "@/common/types";
+import { SORT_BY } from "@/common/constants";
+import { useAppDispatch, useAppSelector } from "@/common/hooks";
+import type { ChangeEvent } from "react";
+import type { SortBy } from "@/common/types";
+import { changeFilter, selectFilter } from "@/pages/FilteredMoviesPage/model";
+
+const options = [
+  {value: SORT_BY.POPULARITY_DESC, label: 'Popularity ↓'},
+  {value: SORT_BY.POPULARITY_ASC, label: 'Popularity ↑'},
+  {value: SORT_BY.RATING_DESC, label: 'Rating ↓'},
+  {value: SORT_BY.RATING_ASC, label: 'Rating ↑'},
+  {value: SORT_BY.RELEASE_DATE_DESC, label: 'Release date ↓'},
+  {value: SORT_BY.RELEASE_DATE_ASC, label: 'Release date ↑'},
+  {value: SORT_BY.TITLE_DESC, label: 'Title A-Z'},
+  {value: SORT_BY.TITLE_ASC, label: 'Title Z-A'},
+]
 
 export const SortSelect = () => {
-    const filter = useAppSelector(selectFilter)
-    const dispatch = useAppDispatch();
+  const filter = useAppSelector(selectFilter)
+  const dispatch = useAppDispatch();
 
-    const handleSelectFilter = (e: ChangeEvent<HTMLSelectElement>) => {
-        dispatch(changeFilterAC({
-            sort: e.currentTarget.value as Sort_by,
-        }))
-    }
+  const handleSelectFilter = (e: ChangeEvent<HTMLSelectElement>) => {
+    dispatch(changeFilter({sort: e.currentTarget.value as SortBy}))
+  }
 
-    return (
-        <label className={s.sortLabel}>Sort By
-            <select className={s.sortSelect} value={filter.sort} onChange={handleSelectFilter}>
-                <option value={SORT_BY.POPULARITY_DESC}>Popularity ↓</option>
-                <option value={SORT_BY.POPULARITY_ASC}>Popularity ↑</option>
-                <option value={SORT_BY.RATING_DESC}>Rating ↓</option>
-                <option value={SORT_BY.RATING_ASC}>Rating ↑</option>
-                <option value={SORT_BY.RELEASE_DATE_DESC}>Release date ↓</option>
-                <option value={SORT_BY.RELEASE_DATE_ASC}>Release date ↑</option>
-                <option value={SORT_BY.TITLE_DESC}>Title A-Z</option>
-                <option value={SORT_BY.TITLE_ASC}>Title Z-A</option>
+  return (
+          <label className={s.container}>Sort By
+            <select className={s.select} value={filter.sort} onChange={handleSelectFilter}>
+              {options.map((option) => (<option value={option.value}>{option.label}</option>))}
             </select>
-        </label>
-    )
+          </label>
+  )
 }

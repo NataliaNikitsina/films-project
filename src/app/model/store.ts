@@ -1,8 +1,8 @@
-import {appReducer, appSlice} from "@/app/app-slice.ts";
+import {appReducer, appSlice} from "@/app/model/app-slice.ts";
 import {combineReducers, configureStore} from "@reduxjs/toolkit";
 import {setupListeners} from "@reduxjs/toolkit/query";
-import {baseApi} from "@/app/baseApi.ts";
-import {filterReducer, filterSlice} from "@/pages/FilteredMoviesPage/api/filter-slice.ts";
+import {baseApi} from "@/app/model/base-api.ts";
+import {filterReducer, filterSlice} from "@/pages/FilteredMoviesPage/model/filter-slice.ts";
 
 const rootReducer = combineReducers({
     [appSlice.name]: appReducer,

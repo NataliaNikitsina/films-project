@@ -1,12 +1,11 @@
 import {useEffect, useState} from "react";
-import {useGetPopularMovieQuery} from "@/pages/api";
 import {MoviesList, Pagination, SkeletonMovies} from "@/common/components";
 import {SECTION_LABELS} from "@/common/constants";
-
+import { useGetPopularMovieQuery } from "@/app/model";
 
 
 export const PopularMovies = () => {
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState<number>(1)
     const {data, isLoading} = useGetPopularMovieQuery({page: currentPage})
     useEffect(() => {window.scrollTo(0, 0)}, [data])
 

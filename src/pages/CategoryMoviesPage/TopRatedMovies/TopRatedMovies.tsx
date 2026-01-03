@@ -1,11 +1,11 @@
 import {useEffect, useState} from "react";
-import {useGetTopRatedMovieQuery} from "@/pages/api";
 import {MoviesList, Pagination, SkeletonMovies} from "@/common/components";
 import {SECTION_LABELS} from "@/common/constants";
+import { useGetTopRatedMovieQuery } from "@/app/model";
 
 
 export const TopRatedMovies = () => {
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState<number>(1)
     const {data, isLoading} = useGetTopRatedMovieQuery({page: currentPage})
     useEffect(() => {window.scrollTo(0, 0)}, [data])
 

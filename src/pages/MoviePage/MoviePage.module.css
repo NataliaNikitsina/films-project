@@ -1,6 +1,5 @@
 .container {
     width: 100%;
-    border-radius: 40px;
     display: flex;
     flex-direction: column;
     gap: 32px;

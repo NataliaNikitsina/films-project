@@ -1,53 +1,41 @@
 import s from './MainPage.module.css'
-import {useMemo} from "react";
-import {PATH, POSTER_SIZES, SECTION_LABELS} from "@/common/constants";
-import {useGetAllCategoryMoviesQuery} from "@/pages/MainPage/hooks";
-import {getRandomNumber} from "@/common/utils";
-import {useGetConfigurationQuery} from "@/pages/api";
-import {CategoryPreview, SearchForm, SkeletonMainPage} from "@/common/components";
-import noCover from "@/assets/images/noCover.svg"
+import { PATH, SECTION_LABELS } from "@/common/constants";
+import { useAllCategoryMoviesQuery } from "@/pages/MainPage/hooks";
+import { CategoryPreview, SearchForm, SkeletonMainPage } from "@/common/components";
+import { useMainBackgroundImage } from "@/pages/MainPage/hooks/useMainBackgroundImage.ts";
 
 
 const links = [
-    {path: PATH.POPULAR_MOVIES, label: SECTION_LABELS.POPULAR_MOVIES},
-    {path: PATH.TOP_RATED_MOVIES, label: SECTION_LABELS.TOP_RATED_MOVIES},
-    {path: PATH.UPCOMING_MOVIES, label: SECTION_LABELS.UPCOMING_MOVIES},
-    {path: PATH.NOW_PLAYING_MOVIES, label: SECTION_LABELS.NOW_PLAYING_MOVIES},
+  {path: PATH.POPULAR_MOVIES, label: SECTION_LABELS.POPULAR_MOVIES},
+  {path: PATH.TOP_RATED_MOVIES, label: SECTION_LABELS.TOP_RATED_MOVIES},
+  {path: PATH.UPCOMING_MOVIES, label: SECTION_LABELS.UPCOMING_MOVIES},
+  {path: PATH.NOW_PLAYING_MOVIES, label: SECTION_LABELS.NOW_PLAYING_MOVIES},
 ]
 
 export function MainPage() {
-    const allCategoryMoviesSliced = useGetAllCategoryMoviesQuery()
-    const popularMovies = allCategoryMoviesSliced.popularMoviesAll
-    const randomIndex = useMemo(()=>getRandomNumber(popularMovies.length), [popularMovies])
+  const allCategoryMoviesSliced = useAllCategoryMoviesQuery()
+  const backgroundImageStyle = useMainBackgroundImage()
 
-    const {data} = useGetConfigurationQuery()
-    const baseImageUrl = data?.images.secure_base_url
-    const imageSize = data?.images.poster_sizes.includes(POSTER_SIZES.ORIGINAL) ? POSTER_SIZES.ORIGINAL : ''
-    let randomCover;
-    if(popularMovies.length > 0 && imageSize) {
-        randomCover =baseImageUrl + imageSize + popularMovies[randomIndex].backdrop_path
-    }else randomCover = noCover
+  if (allCategoryMoviesSliced.isLoading) return <SkeletonMainPage/>
 
-    if(allCategoryMoviesSliced.isLoading) return <SkeletonMainPage/>
-
-    return (
-        <section>
-            <div className={s.main} style={{backgroundImage: `linear-gradient(rgba(4, 21, 45, 0) 0%, rgb(18, 18, 18) 79.17%), url(${randomCover})`}}>
-                <div className={s.content}>
-                    <h1 className={s.title}>Welcome to TMDB</h1>
-                    <h2 className={s.subtitle}>Browse highlighted titles from TMDB</h2>
-                    <SearchForm/>
-                </div>
+  return (
+          <section>
+            <div className={s.main} style={backgroundImageStyle}>
+              <div className={s.content}>
+                <h1>Welcome</h1>
+                <h3>Browse highlighted titles from TMDB</h3>
+                <SearchForm/>
+              </div>
             </div>
             {links.map(((el, index) => (
-                <CategoryPreview
-                    key={index}
-                    title={el.label}
-                    data={allCategoryMoviesSliced[el.label] ?? []}
-                    linkPath={el.path}
-                />
+                    <CategoryPreview
+                            key={index}
+                            title={el.label}
+                            data={allCategoryMoviesSliced[el.label] ?? []}
+                            linkPath={el.path}
+                    />
             )))}
-        </section>
-    )
+          </section>
+  )
 }
 

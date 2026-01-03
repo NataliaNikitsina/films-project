@@ -26,22 +26,22 @@ export const appSlice = createSlice({
         selectSearchValue: state => state.searchValue
     },
     reducers: (create) => ({
-        changeThemeModeAC: create.reducer<{ themeMode: ThemeMode }>((state, action) => {
+        changeThemeMode: create.reducer<{ themeMode: ThemeMode }>((state, action) => {
             state.themeMode = action.payload.themeMode
         }),
-        addFavoriteMovieAC: create.reducer<{movie: Movie}>((state, action) => {
+        addFavoriteMovie: create.reducer<{movie: Movie}>((state, action) => {
             state.favoriteMovies.unshift(action.payload.movie);
         }),
-        deleteFavoriteMovieAC: create.reducer<{movieId: number}>((state, action) => {
+        deleteFavoriteMovie: create.reducer<{movieId: number}>((state, action) => {
             const index = state.favoriteMovies.findIndex(movie => movie.id === action.payload.movieId)
             if (index !== -1) state.favoriteMovies.splice(index, 1)
         }),
-        setSearchValueAC: create.reducer<{ searchValue: string}>((state, action) => {
+        setSearchValue: create.reducer<{ searchValue: string}>((state, action) => {
             state.searchValue = action.payload.searchValue
         }),
     }),
 })
 
 export const appReducer = appSlice.reducer
-export const {changeThemeModeAC, addFavoriteMovieAC, deleteFavoriteMovieAC, setSearchValueAC} = appSlice.actions
+export const {changeThemeMode, addFavoriteMovie, deleteFavoriteMovie, setSearchValue} = appSlice.actions
 export const {selectThemeMode, selectFavoriteMovies, selectSearchValue} = appSlice.selectors

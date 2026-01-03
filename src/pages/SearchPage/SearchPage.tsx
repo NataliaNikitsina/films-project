@@ -1,7 +1,6 @@
 import "./SearchPage.module.css"
-import {selectSearchValue} from "@/app";
+import { selectSearchValue, useSearchMoviesQuery } from "@/app/model";
 import {useAppSelector} from "@/common/hooks";
-import {useSearchMoviesQuery} from "@/pages/api";
 import {MoviesList, SearchForm, SkeletonMovies} from "@/common/components";
 
 export function SearchPage() {

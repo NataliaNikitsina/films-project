@@ -4,7 +4,8 @@ import {
     MovieDetailsResponseSchema, MovieSchema,
     MoviesResponseSchema, MoviesResponseWithDatePeriodSchema
 } from "@/common/types/schemas.ts";
-import {SORT_BY} from "@/common/constants/constants.ts";
+import { IMAGE_SIZES, SORT_BY } from "@/common/constants";
+
 
 
 export type Movie = z.infer<typeof MovieSchema>;
@@ -25,8 +26,8 @@ export type SearchParams = {
     year?: string
 }
 
-export type  QueryParams = {
-    sort_by?: Sort_by
+export type  FilterQueryParams = {
+    sort_by?: SortBy
     'vote_average.lte'?: number
     'vote_average.gte'?: number
     with_genres?: string,
@@ -34,12 +35,13 @@ export type  QueryParams = {
 }
 
 export type Filter= {
-    sort?: Sort_by,
+    sort?: SortBy,
     rating?: [number, number],
     genres?: string,
 }
 
-export type Sort_by = (typeof SORT_BY)[keyof typeof SORT_BY]
+export type SortBy = (typeof SORT_BY)[keyof typeof SORT_BY]
+export type ImageSizes = (typeof IMAGE_SIZES)[keyof typeof IMAGE_SIZES]
 
 
 

@@ -1,12 +1,11 @@
 import {useEffect, useState} from "react";
 import {MoviesList, Pagination, SkeletonMovies} from "@/common/components";
-import {useGetNowPlayingMovieQuery} from "@/pages/api";
 import {SECTION_LABELS} from "@/common/constants";
-
+import { useGetNowPlayingMovieQuery } from "@/app/model";
 
 
 export const NowPlayingMovies = () => {
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState<number>(1)
     const {data, isLoading} = useGetNowPlayingMovieQuery({page: currentPage})
     useEffect(() => {window.scrollTo(0, 0)}, [data])
 

@@ -1,5 +1,1 @@
 export {CategoryMoviesPage} from './CategoryMoviesPage.tsx'
-export {UpcomingMovies} from './UpcomingMovies/UpcomingMovies.tsx'
-export {PopularMovies} from './PopularMovies/PopularMovies.tsx'
-export {TopRatedMovies} from './TopRatedMovies/TopRatedMovies.tsx'
-export {NowPlayingMovies} from './NowPlayingMovies/NowPlayingMovies.tsx'

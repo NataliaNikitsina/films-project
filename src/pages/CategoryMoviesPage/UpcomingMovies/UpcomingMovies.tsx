@@ -1,10 +1,10 @@
 import {useEffect, useState} from "react";
 import {SECTION_LABELS} from "@/common/constants";
-import {useGetUpcomingMovieQuery} from "@/pages/api";
 import {MoviesList, Pagination, SkeletonMovies} from "@/common/components";
+import { useGetUpcomingMovieQuery } from "@/app/model";
 
 export const UpcomingMovies = () => {
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState<number>(1)
     const {data, isLoading} = useGetUpcomingMovieQuery({page: currentPage})
     useEffect(() => {window.scrollTo(0, 0)}, [data])
 

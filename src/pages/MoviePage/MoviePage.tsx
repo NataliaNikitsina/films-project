@@ -1,13 +1,11 @@
 import s from './MoviePage.module.css'
 import {useParams} from "react-router";
-import {useGetMovieDetailQuery} from "@/pages/api";
 import {SkeletonMovieDetail} from "@/common/components";
 import {MovieDetail} from "@/pages/MoviePage/MovieDetail";
 import {MovieActors} from "@/pages/MoviePage/MovieActors";
 import {getSlicedArray} from "@/common/utils";
 import {SimilarMovies} from "@/pages/MoviePage/SimilarMovies";
-
-
+import { useGetMovieDetailQuery } from "@/app/model";
 
 
 export const MoviePage = () => {
@@ -15,6 +13,7 @@ export const MoviePage = () => {
     const {data, isLoading} = useGetMovieDetailQuery(movieId!)
 
     if (isLoading) return <SkeletonMovieDetail/>
+
     return (
         data && <section className={s.container}>
             <MovieDetail movie={data}/>

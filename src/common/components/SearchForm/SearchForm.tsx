@@ -1,6 +1,6 @@
 import s from './SearchForm.module.css'
 import {useAppDispatch, useAppSelector} from "@/common/hooks";
-import {selectSearchValue, setSearchValueAC} from "@/app";
+import {selectSearchValue, setSearchValue} from "@/app/model";
 import {type ChangeEvent, type FormEvent, useState} from "react";
 import {useNavigate} from "react-router";
 import {PATH} from "@/common/constants";
@@ -15,13 +15,13 @@ export const SearchForm = () => {
 
     const handleSearch = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault()
-        dispatch(setSearchValueAC({searchValue: value.trim()}))
+        dispatch(setSearchValue({searchValue: value.trim()}))
         navigate(PATH.SEARCH_PAGE)
     }
 
     const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
         if(e.currentTarget.value.trim().length === 0){
-            dispatch(setSearchValueAC({searchValue: ''}))
+            dispatch(setSearchValue({searchValue: ''}))
         }
         setValue(e.currentTarget.value)
     }

@@ -1,6 +1,6 @@
 
 import { useSelector } from 'react-redux'
-import type {RootState} from "@/app/store.ts";
+import type {RootState} from "@/app/model/store.ts";
 
 export const useGlobalLoading = () => {
     return useSelector((state: RootState) => {

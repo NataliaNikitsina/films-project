@@ -1,17 +1,18 @@
 import "react-range-slider-input/dist/style.css";
 import s from './FilteredMoviesPage.module.css'
-import {useGetFilteredMoviesQuery} from "@/pages/api";
 import {useEffect, useState} from "react";
 import {useAppSelector} from "@/common/hooks";
 import {Filter} from "@/pages/FilteredMoviesPage/Filter";
 import {MoviesList, Pagination, SkeletonMovies} from "@/common/components";
-import {selectFilter} from "@/pages/FilteredMoviesPage/api";
 import {SECTION_LABELS} from "@/common/constants";
+import { useGetFilteredMoviesQuery } from "@/app/model";
+import { selectFilter } from "@/pages/FilteredMoviesPage/model";
 
 
 export function FilteredMoviesPage() {
-    const [currentPage, setCurrentPage] = useState(1)
+    const [currentPage, setCurrentPage] = useState<number>(1)
     const filter = useAppSelector(selectFilter)
+
     const {data, currentData, isLoading} = useGetFilteredMoviesQuery({
         page: currentPage,
         sort_by: filter.sort,
@@ -22,12 +23,12 @@ export function FilteredMoviesPage() {
 
     useEffect(() => {
         if (currentData) window.scrollTo(0, 0);
-    }, [data, currentData]);
+    }, [currentData]);
 
     return (
-        <section className={s.filteredMoviesPage}>
+        <section className={s.container}>
             <Filter/>
-            <div className={s.moviesWrapper}>
+            <div className={s.movies}>
                 <h2>{SECTION_LABELS.FILTERED_MOVIES_PAGE}</h2>
                 {isLoading && <SkeletonMovies/>}
                 {data && <MoviesList movies={data.results}/>}

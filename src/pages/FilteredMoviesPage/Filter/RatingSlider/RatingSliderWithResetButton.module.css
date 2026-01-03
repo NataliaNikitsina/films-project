@@ -1,10 +1,10 @@
-.ratingWrapper {
+.container {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.ratingInfo {
+.rating {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -15,11 +15,17 @@
     align-self: center;
     margin-top: 12px;
     padding: 8px 12px;
-    background-color: var(--color-gray-500);
-    border-color: transparent;
+    background-color: var(--color-gray-400);
     color: var(--color-white);
-    border-radius: 999px;
+    border-radius: 99px;
     cursor: pointer;
+    font-size: var(--font-size-s);
+    border-color: transparent;
+    transition: background-color 0.2s;
+}
+
+.reset:hover {
+    background-color: var(--color-indigo-500);
 }
 
 

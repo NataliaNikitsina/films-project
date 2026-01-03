@@ -19,14 +19,14 @@ export const SECTION_LABELS = {
     FILTERED_MOVIES_PAGE: 'Filtered movies',
     FAVORITES_MOVIES_PAGE: 'Favorites',
     SEARCH_PAGE: 'Search',
+
     POPULAR_MOVIES: 'Popular Movies',
     TOP_RATED_MOVIES: 'Top Rated Movies',
     UPCOMING_MOVIES: 'Upcoming Movies',
     NOW_PLAYING_MOVIES: 'Now Playing Movies',
 } as const
 
-
-export const POSTER_SIZES = {
+export const IMAGE_SIZES = {
     // "w92",
     // "w154",
     CARD: "w185",
@@ -34,20 +34,14 @@ export const POSTER_SIZES = {
     BIG: "w500",
     // "w780",
     ORIGINAL: "original"
-}
-
-export const PROFILE_SIZES = {
-    SMALL: 'w45',
-    CARD: "w185",
-    BIG: "h632",
-    ORIGINAL: "original"
-}
+} as const
 
 export const SORT_BY = {
     POPULARITY_ASC: 'popularity.asc',
     RELEASE_DATE_ASC: 'primary_release_date.asc',
     RATING_ASC: 'vote_average.asc',
     TITLE_ASC: 'title.asc',
+
     POPULARITY_DESC: 'popularity.desc',
     RELEASE_DATE_DESC: 'primary_release_date.desc',
     RATING_DESC: 'vote_average.desc',

@@ -1,5 +1,5 @@
 import {useAppSelector} from "@/common/hooks";
-import {selectThemeMode} from "@/app";
+import {selectThemeMode} from "@/app/model";
 
 export const useSkeletonTheme = () => {
     const themeMode = useAppSelector(selectThemeMode)

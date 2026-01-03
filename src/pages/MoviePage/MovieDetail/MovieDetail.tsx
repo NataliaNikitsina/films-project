@@ -1,10 +1,10 @@
 import s from './MovieDetail.module.css'
 import noCover from "@/assets/images/noCover.svg";
-import {useGetConfigurationQuery} from "@/pages/api";
 import type {MovieDetailsResponse} from "@/common/types";
-import {POSTER_SIZES} from "@/common/constants";
+import {IMAGE_SIZES} from "@/common/constants";
 import {MovieInfo} from "@/pages/MoviePage/MovieDetail/MovieInfo";
 import {MovieGenres} from "@/pages/MoviePage/MovieDetail/MovieGenres";
+import { useGetConfigurationQuery } from "@/app/model";
 
 
 type Props = {
@@ -14,7 +14,7 @@ type Props = {
 export const MovieDetail = ({movie}: Props) => {
     const {data} = useGetConfigurationQuery()
     const baseImageUrl = data?.images.secure_base_url
-    const imageSize = data?.images.poster_sizes.includes(POSTER_SIZES.BIG) ? POSTER_SIZES.BIG : ''
+    const imageSize = data?.images.poster_sizes.includes(IMAGE_SIZES.BIG) ? IMAGE_SIZES.BIG : ''
 
     let imagePath
 

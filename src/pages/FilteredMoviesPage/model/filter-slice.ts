@@ -15,12 +15,12 @@ export const filterSlice = createSlice({
         selectFilter: state => state.filter,
     },
     reducers: (create) => ({
-        changeFilterAC: create.reducer<Filter>((state, action) => {
+        changeFilter: create.reducer<Filter>((state, action) => {
             state.filter = {...state.filter, ...action.payload}
         }),
     }),
 })
 
 export const filterReducer = filterSlice.reducer
-export const {changeFilterAC} = filterSlice.actions
+export const {changeFilter} = filterSlice.actions
 export const {selectFilter} = filterSlice.selectors
