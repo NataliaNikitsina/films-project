@@ -12,7 +12,7 @@ export const MovieActors = ({cast}: Props) => {
           <div className={s.container}>
             <h2>Cast</h2>
             <div className={s.actors}>
-              {cast.map(actor => (<Actor actor={actor}/>))}
+              {cast.map(actor => (<Actor key={actor.cast_id} actor={actor}/>))}
             </div>
           </div>
   )

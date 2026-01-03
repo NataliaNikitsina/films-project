@@ -1,19 +1,18 @@
-.genres {
+.container {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.genreList {
+.list {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
-    list-style: none;
 }
 
-.genreItem {
+.item {
     padding: 8px 16px;
-    border-radius: 999px;
+    border-radius: 99px;
     background-color: var(--color-gray-200);
     font-size: var(--font-size-s);
 }

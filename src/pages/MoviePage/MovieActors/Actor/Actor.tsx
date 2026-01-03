@@ -1,4 +1,4 @@
-import s from "@/pages/MoviePage/MovieActors/MovieActors.module.css";
+import s from './Actor.module.css'
 import noCover from "@/assets/images/noCover.svg";
 import type { Cast } from "@/common/types";
 import { useImageBasePath } from "@/common/hooks/useImageBasePath.ts";
