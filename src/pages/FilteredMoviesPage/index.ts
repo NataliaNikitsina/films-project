@@ -1,1 +1,1 @@
-export {FilteredMoviesPage} from './FilteredMoviesPage.tsx'
+export {FilteredMoviesPage} from './FilteredMoviesPage.tsx';

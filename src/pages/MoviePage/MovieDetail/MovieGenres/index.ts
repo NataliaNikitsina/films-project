@@ -1,1 +1,1 @@
-export {MovieGenres} from './MovieGenres.tsx'
+export {MovieGenres} from './MovieGenres.tsx';

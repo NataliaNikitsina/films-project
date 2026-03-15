@@ -1,1 +1,1 @@
-export {SearchPage} from './SearchPage.tsx'
+export {SearchPage} from './SearchPage.tsx';

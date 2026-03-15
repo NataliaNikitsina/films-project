@@ -1,1 +1,1 @@
-export {MovieActors} from './MovieActors.tsx'
+export {MovieActors} from './MovieActors.tsx';

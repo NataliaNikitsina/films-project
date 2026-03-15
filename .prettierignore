@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+out/
+
+# Test coverage
+coverage/
+
+# Logs
+*.log
+
+# Lockfiles
+pnpm-lock.yaml
+
+# Environment variables
+.env
+.env.*
+
+# Git
+.git/
+.gitignore

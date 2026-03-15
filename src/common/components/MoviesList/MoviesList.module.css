@@ -1,5 +1,5 @@
 .container {
-    display: grid;
-    grid-template-columns: repeat(var(--movie-grid-columns, 5), minmax(0, 1fr));
-    gap: var(--item-gap);
+  display: grid;
+  grid-template-columns: repeat(var(--movie-grid-columns, 5), minmax(0, 1fr));
+  gap: var(--item-gap);
 }

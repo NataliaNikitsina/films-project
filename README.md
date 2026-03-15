@@ -1,73 +1,50 @@
-# React + TypeScript + Vite
+# Films Project (TMDB)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React application for browsing movies from The Movie Database (TMDB): categories, search, filters, and favorites.
 
-Currently, two official plugins are available:
+**Features**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse categories: popular, top rated, upcoming, now playing
+- Search movies by query
+- Filter by genres, rating range, and sort order
+- Movie details page
+- Favorites list persisted in localStorage
+- Light/dark theme toggle
 
-## React Compiler
+**Tech Stack**
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- React 19 + TypeScript
+- Vite
+- Redux Toolkit + RTK Query
+- React Router
+- Zod
+- Prettier, ESLint, Stylelint
 
-## Expanding the ESLint configuration
+**Getting Started**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Install dependencies:
+   ```bash
+   pnpm install
+   ```
+2. Create `.env.local` in the project root:
+   ```bash
+   VITE_API_KEY=your_tmdb_api_key
+   VITE_TOKEN=your_tmdb_bearer_token
+   ```
+3. Start the dev server:
+   ```bash
+   pnpm dev
+   ```
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Scripts**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- `pnpm dev` — start dev server
+- `pnpm build` — typecheck + production build
+- `pnpm preview` — preview production build
+- `pnpm lint` / `pnpm lint:fix` — run/fix ESLint
+- `pnpm format` / `pnpm format:fix` — run/fix Prettier
+- `pnpm stylelint` / `pnpm stylelint:fix` — run/fix Stylelint
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+**Notes**
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- Favorites and theme are stored in localStorage.

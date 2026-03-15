@@ -1,13 +1,12 @@
-import logo from '@/assets/images/logo.svg'
-import s from './Logo.module.css'
-import {NavLink} from "react-router";
-import {PATH} from "@/common/constants";
-
+import logo from '@/assets/images/logo.svg';
+import s from './Logo.module.css';
+import {NavLink} from 'react-router';
+import {PATH} from '@/common/constants';
 
 export function Logo() {
-    return (
-        <NavLink to={PATH.MAIN_PAGE}>
-            <img className={s.logo} src={logo} alt="Logo" />
-        </NavLink>
-    )
+  return (
+    <NavLink to={PATH.MAIN_PAGE}>
+      <img className={s.logo} src={logo} alt="Logo" />
+    </NavLink>
+  );
 }

@@ -1,1 +1,1 @@
-export {NowPlayingMovies} from './NowPlayingMovies.tsx'
+export {NowPlayingMovies} from './NowPlayingMovies.tsx';

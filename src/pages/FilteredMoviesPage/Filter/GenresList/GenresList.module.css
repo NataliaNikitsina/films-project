@@ -1,35 +1,38 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .genres {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 }
 
 .btn {
-    background-color: var(--color-control-background);
-    font-size: var(--font-size-s);
-    transition: background-color 0.2s, color 0.2s, border-color 0.2s;
-    padding: 5px 10px;
-    border-radius: 99px;
-    cursor: pointer;
-    border: 2px solid var(--color-control-border);
+  background-color: var(--color-control-background);
+  font-size: var(--font-size-s);
+  transition:
+    background-color 0.2s,
+    color 0.2s,
+    border-color 0.2s;
+  padding: 5px 10px;
+  border-radius: 99px;
+  cursor: pointer;
+  border: 2px solid var(--color-control-border);
 }
 
 .btn:hover {
-    border-color: var(--color-indigo-500);
+  border-color: var(--color-indigo-500);
 }
 
 .active {
-    background-color: var(--color-indigo-500);
-    color: var(--color-white);
-    border: 2px solid var(--color-gray-900);
+  background-color: var(--color-indigo-500);
+  color: var(--color-white);
+  border: 2px solid var(--color-gray-900);
 }
 
 .active:hover {
-    background-color: var(--color-gray-200);
+  background-color: var(--color-gray-200);
 }

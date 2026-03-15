@@ -1,1 +1,1 @@
-export {MoviePage} from './MoviePage.tsx'
+export {MoviePage} from './MoviePage.tsx';

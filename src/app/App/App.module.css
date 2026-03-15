@@ -1,14 +1,16 @@
 .app {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden;
-    transition: background-color .3s ease, color .3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 }
 
 .container {
-    max-width: 1240px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 100px 20px;
+  max-width: 1240px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 100px 20px;
 }

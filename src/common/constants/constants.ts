@@ -1,51 +1,49 @@
 export const PATH = {
-    MAIN_PAGE: '/',
-    CATEGORY_MOVIES_PAGE: '/category',
-    FILTERED_MOVIES_PAGE: '/filter',
-    FAVORITES_MOVIES_PAGE: '/favorites',
-    SEARCH_PAGE: '/search',
-    MOVIE_PAGE: '/movies/:movieId',
-    NOT_FOUND: '*',
+  MAIN_PAGE: '/',
+  CATEGORY_MOVIES_PAGE: '/category',
+  FILTERED_MOVIES_PAGE: '/filter',
+  FAVORITES_MOVIES_PAGE: '/favorites',
+  SEARCH_PAGE: '/search',
+  MOVIE_PAGE: '/movies/:movieId',
+  NOT_FOUND: '*',
 
-    POPULAR_MOVIES: 'popular',
-    TOP_RATED_MOVIES: 'top-rated',
-    UPCOMING_MOVIES: 'upcoming',
-    NOW_PLAYING_MOVIES: 'now-playing',
+  POPULAR_MOVIES: 'popular',
+  TOP_RATED_MOVIES: 'top-rated',
+  UPCOMING_MOVIES: 'upcoming',
+  NOW_PLAYING_MOVIES: 'now-playing',
 } as const;
 
 export const SECTION_LABELS = {
-    MAIN_PAGE: 'Main',
-    CATEGORY_MOVIES_PAGE: 'Category movies',
-    FILTERED_MOVIES_PAGE: 'Filtered movies',
-    FAVORITES_MOVIES_PAGE: 'Favorites',
-    SEARCH_PAGE: 'Search',
+  MAIN_PAGE: 'Main',
+  CATEGORY_MOVIES_PAGE: 'Category movies',
+  FILTERED_MOVIES_PAGE: 'Filtered movies',
+  FAVORITES_MOVIES_PAGE: 'Favorites',
+  SEARCH_PAGE: 'Search',
 
-    POPULAR_MOVIES: 'Popular Movies',
-    TOP_RATED_MOVIES: 'Top Rated Movies',
-    UPCOMING_MOVIES: 'Upcoming Movies',
-    NOW_PLAYING_MOVIES: 'Now Playing Movies',
-} as const
+  POPULAR_MOVIES: 'Popular Movies',
+  TOP_RATED_MOVIES: 'Top Rated Movies',
+  UPCOMING_MOVIES: 'Upcoming Movies',
+  NOW_PLAYING_MOVIES: 'Now Playing Movies',
+} as const;
 
 export const IMAGE_SIZES = {
-    // "w92",
-    // "w154",
-    CARD: "w185",
-    // "w342",
-    BIG: "w500",
-    // "w780",
-    ORIGINAL: "original"
-} as const
+  // "w92",
+  // "w154",
+  CARD: 'w185',
+  // "w342",
+  BIG: 'w500',
+  // "w780",
+  ORIGINAL: 'original',
+} as const;
 
 export const SORT_BY = {
-    POPULARITY_ASC: 'popularity.asc',
-    RELEASE_DATE_ASC: 'primary_release_date.asc',
-    RATING_ASC: 'vote_average.asc',
-    TITLE_ASC: 'original_title.asc',
+  POPULARITY_ASC: 'popularity.asc',
+  RELEASE_DATE_ASC: 'primary_release_date.asc',
+  RATING_ASC: 'vote_average.asc',
+  TITLE_ASC: 'original_title.asc',
 
-    POPULARITY_DESC: 'popularity.desc',
-    RELEASE_DATE_DESC: 'primary_release_date.desc',
-    RATING_DESC: 'vote_average.desc',
-    TITLE_DESC: 'original_title.desc',
-} as const
-
-
+  POPULARITY_DESC: 'popularity.desc',
+  RELEASE_DATE_DESC: 'primary_release_date.desc',
+  RATING_DESC: 'vote_average.desc',
+  TITLE_DESC: 'original_title.desc',
+} as const;

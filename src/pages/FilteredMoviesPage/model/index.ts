@@ -1,1 +1,1 @@
-export * from './filter-slice.ts'
+export * from './filter-slice.ts';

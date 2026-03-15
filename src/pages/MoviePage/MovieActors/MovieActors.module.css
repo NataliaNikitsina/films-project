@@ -1,11 +1,11 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    gap: var(--item-gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--item-gap);
 }
 
 .actors {
-    display: grid;
-    grid-template-columns: repeat(var(--movie-grid-columns, 6), minmax(0, 1fr));
-    gap: var(--item-gap);
+  display: grid;
+  grid-template-columns: repeat(var(--movie-grid-columns, 6), minmax(0, 1fr));
+  gap: var(--item-gap);
 }

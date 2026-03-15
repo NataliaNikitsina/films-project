@@ -1,1 +1,1 @@
-export {CategoryMoviesPage} from './CategoryMoviesPage.tsx'
+export {CategoryMoviesPage} from './CategoryMoviesPage.tsx';

@@ -1,1 +1,1 @@
-export {SortSelect} from './SortSelect.tsx'
+export {SortSelect} from './SortSelect.tsx';

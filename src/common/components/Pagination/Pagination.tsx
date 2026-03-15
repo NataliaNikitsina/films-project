@@ -1,39 +1,39 @@
-import s from './Pagination.module.css'
-import {getPaginationPages} from "@/common/utils/getPaginationPages.ts";
+import s from './Pagination.module.css';
+import {getPaginationPages} from '@/common/utils/getPaginationPages.ts';
 
 type Props = {
-    pagesCount: number
-    currentPage: number
-    setCurrentPage: (page: number) => void
-}
+  pagesCount: number;
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
+};
 export const Pagination = ({pagesCount, currentPage, setCurrentPage}: Props) => {
-    if (pagesCount <= 1) return null
-    const pages = getPaginationPages(currentPage, pagesCount)
+  if (pagesCount <= 1) return null;
+  const pages = getPaginationPages(currentPage, pagesCount);
 
-    const handleClick = (page: number) => {
-        if(page !== currentPage){
-            setCurrentPage(Number(page));
-        }
+  const handleClick = (page: number) => {
+    if (page !== currentPage) {
+      setCurrentPage(Number(page));
     }
-    return (
-        <div className={s.pagination}>
-            {pages.map((page, idx) =>
-                page === '...' ? (
-                    <span className={s.ellipsis} key={`ellipsis-${idx}`}>...</span>
-                ) : (
-                    <button
-                        key={page}
-                        className={
-                            page === currentPage ? `${s.pageButton} ${s.pageButtonActive}` : s.pageButton
-                        }
-                        onClick={()=>handleClick(page)}
-                        disabled={page === currentPage}
-                        type="button"
-                    >
-                        {page}
-                    </button>
-                )
-            )}
-        </div>
-    )
-}
+  };
+  return (
+    <div className={s.pagination}>
+      {pages.map((page, idx) =>
+        page === '...' ? (
+          <span className={s.ellipsis} key={`ellipsis-${idx}`}>
+            ...
+          </span>
+        ) : (
+          <button
+            key={page}
+            className={page === currentPage ? `${s.pageButton} ${s.pageButtonActive}` : s.pageButton}
+            onClick={() => handleClick(page)}
+            disabled={page === currentPage}
+            type="button"
+          >
+            {page}
+          </button>
+        )
+      )}
+    </div>
+  );
+};

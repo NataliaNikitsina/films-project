@@ -1,20 +1,20 @@
 .container {
-    display: grid;
-    grid-template-columns: 430px minmax(0, 1fr);
-    gap: 32px;
+  display: grid;
+  grid-template-columns: 430px minmax(0, 1fr);
+  gap: 32px;
 }
 
 .cover {
-    width: 100%;
-    border-radius: 26px;
+  width: 100%;
+  border-radius: 26px;
 }
 
 .details {
-    display: flex;
-    flex-direction: column;
-    gap: var(--item-gap);
+  display: flex;
+  flex-direction: column;
+  gap: var(--item-gap);
 }
 
 .description {
-    font-size: var(--font-size-l);
+  font-size: var(--font-size-l);
 }

@@ -1,13 +1,8 @@
 .container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 
-    --movie-grid-columns: 6;
+  --movie-grid-columns: 6;
 }
-
-
-
-
-

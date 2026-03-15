@@ -1,116 +1,110 @@
 .card {
-    max-width: 200px;
-    width: 100%;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+  max-width: 200px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .poster {
-    position: relative;
-    padding-top: 150%;
-    border-radius: 16px;
-    overflow: hidden;
+  position: relative;
+  padding-top: 150%;
+  border-radius: 16px;
+  overflow: hidden;
 }
 
 .posterLink {
-    position: absolute;
-    inset: 0;
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    border-radius: inherit;
+  position: absolute;
+  inset: 0;
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  border-radius: inherit;
 }
 
 .image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform .2s ease;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.2s ease;
 }
 
 .rating {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    border-radius: 50%;
-    font-size: var(--font-size-xs);
-    font-weight: 500;
-    color: #111827;
-
-    max-width: 35px;
-    width: 100%;
-    height: 35px;
-
-    text-align: center;
-    transition: background-color 0.5s ease;
-
-    position: absolute;
-    bottom: 7%;
-    right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  color: #111827;
+  max-width: 35px;
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  transition: background-color 0.5s ease;
+  position: absolute;
+  bottom: 7%;
+  right: 10%;
 }
 
 .favorite {
-    position: absolute;
-
-    top: 7%;
-    right: 10%;
-    opacity: 0;
+  position: absolute;
+  top: 7%;
+  right: 10%;
+  opacity: 0;
 }
 
-.poster:hover .favorite{
-    opacity: 1;
-    transition: opacity .3s ease;
+.poster:hover .favorite {
+  opacity: 1;
+  transition: opacity 0.3s ease;
 }
 
 .heart {
-    width: 18px;
-    height: 18px;
-    transform: rotate(-45deg);
-
-    position: relative;
+  width: 18px;
+  height: 18px;
+  transform: rotate(-45deg);
+  position: relative;
 }
 
 .heart::before,
 .heart::after {
-    content: '';
-    position: absolute;
-    width: 18px;
-    height: 18px;
-    border-radius: 50%;
-    background-color: inherit;
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background-color: inherit;
 }
 
 .heart::before {
-    top: -9px;
-    left: 0;
+  top: -9px;
+  left: 0;
 }
 
 .heart::after {
-    left: 9px;
-    top: 0;
+  left: 9px;
+  top: 0;
 }
 
 .titleLink {
-    display: inline-block;
-    text-decoration: none;
-    color: inherit;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .red {
-    background-color: var(--color-red-600);
+  background-color: var(--color-red-600);
 }
 
 .yellow {
-    background-color: var(--color-yellow-400);
+  background-color: var(--color-yellow-400);
 }
 
 .green {
-    background-color: var(--color-green-600);
+  background-color: var(--color-green-600);
 }
 
 .white {
-    background-color: var(--color-gray-100);
+  background-color: var(--color-gray-100);
 }

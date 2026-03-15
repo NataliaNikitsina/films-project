@@ -1,1 +1,1 @@
-export {SimilarMovies} from './SimilarMovies.tsx'
+export {SimilarMovies} from './SimilarMovies.tsx';

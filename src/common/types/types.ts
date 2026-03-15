@@ -1,12 +1,15 @@
-import * as z from "zod";
+import * as z from 'zod';
 import {
-    CastSchema, GenreSchema, GenresResponseSchema,
-    MovieDetailsResponseSchema, MovieSchema,
-    MoviesResponseSchema, MoviesResponseWithDatePeriodSchema
-} from "@/common/types/schemas.ts";
-import { IMAGE_SIZES, SORT_BY } from "@/common/constants";
-
-
+  CastSchema,
+  GenreSchema,
+  GenresResponseSchema,
+  ConfigurationSchema,
+  MovieDetailsResponseSchema,
+  MovieSchema,
+  MoviesResponseSchema,
+  MoviesResponseWithDatePeriodSchema,
+} from '@/common/types/schemas.ts';
+import {IMAGE_SIZES, SORT_BY} from '@/common/constants';
 
 export type Movie = z.infer<typeof MovieSchema>;
 export type MoviesResponse = z.infer<typeof MoviesResponseSchema>;
@@ -15,37 +18,31 @@ export type Genre = z.infer<typeof GenreSchema>;
 export type MoviesResponseWithDatePeriod = z.infer<typeof MoviesResponseWithDatePeriodSchema>;
 export type MovieDetailsResponse = z.infer<typeof MovieDetailsResponseSchema>;
 export type GenresResponse = z.infer<typeof GenresResponseSchema>;
+export type Configuration = z.infer<typeof ConfigurationSchema>;
 
 export type SearchParams = {
-    query: string
-    include_adult?: boolean
-    language?: string
-    primary_release_year?: string
-    page?: number
-    region?: string
-    year?: string
-}
+  query: string;
+  include_adult?: boolean;
+  language?: string;
+  primary_release_year?: string;
+  page?: number;
+  region?: string;
+  year?: string;
+};
 
-export type  FilterQueryParams = {
-    sort_by?: SortBy
-    'vote_average.lte'?: number
-    'vote_average.gte'?: number
-    with_genres?: string,
-    page?: number
-}
+export type FilterQueryParams = {
+  sort_by?: SortBy;
+  'vote_average.lte'?: number;
+  'vote_average.gte'?: number;
+  with_genres?: string;
+  page?: number;
+};
 
-export type Filter= {
-    sort?: SortBy,
-    rating?: [number, number],
-    genres?: string,
-}
+export type Filter = {
+  sort?: SortBy;
+  rating?: [number, number];
+  genres?: string;
+};
 
-export type SortBy = (typeof SORT_BY)[keyof typeof SORT_BY]
-export type ImageSizes = (typeof IMAGE_SIZES)[keyof typeof IMAGE_SIZES]
-
-
-
-
-
-
-
+export type SortBy = (typeof SORT_BY)[keyof typeof SORT_BY];
+export type ImageSizes = (typeof IMAGE_SIZES)[keyof typeof IMAGE_SIZES];

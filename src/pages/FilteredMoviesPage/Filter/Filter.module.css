@@ -1,12 +1,11 @@
 .filter {
-    grid-column: 1;
-    background-color: var(--color-gray-100);
-    border-radius: 16px;
-    padding: 24px;
-
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    font-weight: 500;
-    font-size: var(--font-size-m);
+  grid-column: 1;
+  background-color: var(--color-gray-100);
+  border-radius: 16px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-weight: 500;
+  font-size: var(--font-size-m);
 }

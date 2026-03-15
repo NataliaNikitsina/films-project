@@ -1,1 +1,1 @@
-export {Actor} from './Actor.tsx'
+export {Actor} from './Actor.tsx';

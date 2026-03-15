@@ -1,3 +1,3 @@
 export const getSlicedArray = <T>(array: T[]): T[] => {
-    return array.slice(0, 6)
-}
+  return array.slice(0, 6);
+};

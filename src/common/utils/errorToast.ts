@@ -1,9 +1,9 @@
-import {toast} from "react-toastify";
+import {toast} from 'react-toastify';
 
 export const errorToast = (message: string, error?: unknown) => {
-    toast(message, {type: 'error', position: 'bottom-right' })
+  toast(message, {type: 'error', position: 'bottom-right'});
 
-    if (error) {
-        console.error(`${message}\n`, error)
-    }
-}
+  if (error) {
+    console.error(`${message}\n`, error);
+  }
+};
